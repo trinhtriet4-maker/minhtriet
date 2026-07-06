@@ -3,40 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FASHION HUB - Tạp Chí Thời Trang Toàn Cầu</title>
-    <style>
-        :root { --primary: #000; --bg: #fff; --accent: #f4f1ea; --text: #222; }
-        body { font-family: 'Arial', sans-serif; margin:0; padding:0; background: var(--bg); color: var(--text); line-height: 1.6; }
-        header { border-bottom: 1px solid #e0e0e0; padding: 20px 0; text-align: center; sticky: top; background: #fff;}
-        .logo { font-family: 'Georgia', serif; font-size: 35px; letter-spacing: 5px; font-weight: bold; margin-bottom: 10px; }
-        nav a { text-decoration: none; color: #000; margin: 0 20px; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; transition: 0.3s; }
-        nav a:hover, nav a.active { color: #777; border-bottom: 1px solid #000; }
-        
-        .hero { position: relative; height: 500px; background: #eaeaea; display: flex; align-items: center; justify-content: center; text-align: center; margin-bottom: 40px; }
-        .hero-content h2 { font-family: 'Georgia', serif; font-size: 45px; margin: 0; letter-spacing: 2px; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .section-title { font-family: 'Georgia', serif; font-size: 24px; text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 10px; margin-top: 40px; letter-spacing: 2px; }
-        
-        /* Grid phân vùng chủ đề */
-        .grid-topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px; }
-        .topic-card { background: #fff; border: 1px solid #eee; overflow: hidden; transition: 0.3s; }
-        .topic-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .topic-img { height: 200px; background: #ddd; display: flex; align-items: center; justify-content: center; font-style: italic; color: #666; }
-        .topic-body { padding: 20px; }
-        .topic-body h3 { font-family: 'Georgia', serif; margin: 0 0 10px 0; }
-        .hot-tag { background: #ff3b30; color: #fff; font-size: 10px; padding: 2px 6px; text-transform: uppercase; vertical-align: middle; margin-left: 5px; font-family: Arial; }
-        .btn-link { display: inline-block; margin-top: 15px; color: var(--primary); text-decoration: none; font-weight: bold; font-size: 13px; }
-        
-        footer { background: #000; color: #fff; padding: 60px 0 30px 0; font-size: 14px; margin-top: 80px; }
-        .sitemap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; border-bottom: 1px solid #333; padding-bottom: 40px; }
-        .sitemap h4 { font-family: 'Georgia', serif; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; color: #fff; }
-        .sitemap ul { list-style: none; padding: 0; margin: 0; }
-        .sitemap ul li { margin-bottom: 10px; }
-        .sitemap ul li a { color: #aaa; text-decoration: none; transition: 0.3s; }
-        .sitemap ul li a:hover { color: #fff; padding-left: 5px; }
-        .copyright { text-align: center; margin-top: 30px; color: #666; font-size: 12px; }
-    </style>
+    <title>FASHION HUB | Tạp Chí Thời Trang & Làm Đẹp</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -46,82 +14,80 @@
             <a href="index.html" class="active">Trang Chủ</a>
             <a href="trends.html">Xu Hướng</a>
             <a href="events.html">Sự Kiện</a>
-            <a href="login.html">Thành Viên</a>
+            <span id="member-nav"><a href="login.html">Thành Viên</a></span>
         </nav>
     </header>
 
-    <div class="hero">
-        <div class="hero-content">
-            <h2>MÙA HÈ 2026: ĐỊNH HÌNH PHONG CÁCH MỚI</h2>
-            <p>Khám phá bộ sưu tập và các xu hướng dẫn đầu thế giới.</p>
+    <div class="hero-banner">
+        <div class="hero-box">
+            <h2>Dòng Chảy Phong Cách 2026</h2>
+            <p>Cập nhật toàn diện xu hướng thế giới và chuyển động thời trang trong nước.</p>
         </div>
     </div>
 
-    <div class="container">
-        <h2 class="section-title">Chủ đề nổi bật vừa cập nhật</h2>
-        <div class="grid-topics">
-            <!-- Chủ đề 1 -->
-            <div class="topic-card">
-                <div class="topic-img" style="background: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400') center/cover;">[Hình ảnh: Xu hướng]</div>
-                <div class="topic-body">
-                    <h3>Xu Hướng Thời Trang <span class="hot-tag">Hot</span></h3>
-                    <p>Sự trỗi dậy của phong cách tối giản đan xen các gam màu đất trong năm 2026.</p>
-                    <a href="trends.html" class="btn-link">Xem tất cả xu hướng →</a>
-                </div>
-            </div>
-            <!-- Chủ đề 2 -->
-            <div class="topic-card">
-                <div class="topic-img" style="background: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400') center/cover;">[Hình ảnh: Sự kiện]</div>
-                <div class="topic-body">
-                    <h3>Sự Kiện & Runway</h3>
-                    <p>Chiêm ngưỡng trọn vẹn những khoảnh khắc đắt giá tại Paris Fashion Week vừa qua.</p>
-                    <a href="events.html" class="btn-link">Xem các sự kiện →</a>
-                </div>
-            </div>
-            <!-- Chủ đề 3 -->
-            <div class="topic-card">
-                <div class="topic-img" style="background: url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400') center/cover;">[Hình ảnh: Làm đẹp]</div>
-                <div class="topic-body">
-                    <h3>Bí Quyết Làm Đẹp <span class="hot-tag">New</span></h3>
-                    <p>Cập nhật quy trình chăm sóc da chuẩn sàn diễn và phong cách trang điểm Clean Girl.</p>
-                    <a href="detail.html" class="btn-link">Đọc bài viết chi tiết →</a>
+    <main class="container">
+        <h2 class="section-title">Thời trang Trong Nước</h2>
+        <div class="grid-layout">
+            <div class="card-item">
+                <div class="card-media" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500');"></div>
+                <div class="card-content">
+                    <h3>NTK Việt Ra Mắt Bộ Sưu Tập Tơ Tằm Tự Nhiên <span class="update-badge">Hot</span></h3>
+                    <p>Sự kết hợp hoàn mỹ giữa chất liệu truyền thống Silk và kỹ thuật dựng phom 3D hiện đại.</p>
+                    <a href="detail.html" class="cross-link">Đọc chi tiết →</a>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- SITE MAP Ở FOOTER -->
+        <h2 class="section-title">Xu Hướng & Làm Đẹp Quốc Tế</h2>
+        <div class="grid-layout">
+            <div class="card-item">
+                <div class="card-media" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500');"></div>
+                <div class="card-content">
+                    <h3>Xu Hướng Trang Điểm Tối Giản Càn Quét Sàn Diễn</h3>
+                    <p>Phong cách lột tả nét đẹp tự nhiên kết hợp cùng các dải màu lặng trung tính đang trở thành tâm điểm.</p>
+                    <a href="trends.html" class="cross-link">Xem bảng xu hướng →</a>
+                </div>
+            </div>
+            
+            <div class="card-item">
+                <div class="card-media" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500');"></div>
+                <div class="card-content">
+                    <h3>Phim Tài Liệu Sàn Diễn Paris Fashion Week <span class="update-badge">Mới</span></h3>
+                    <p>Toàn cảnh thước phim đắt giá phơi bày hậu trường của các nhà mốt Haute Couture danh giá thế giới.</p>
+                    <a href="events.html" class="cross-link">Xem phim sự kiện →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <footer>
-        <div class="container">
-            <div class="sitemap">
-                <div>
-                    <h4>Về Fashion Hub</h4>
-                    <p style="color: #aaa;">Kênh thông tin, tạp chí chuyên sâu cập nhật nhanh chóng mọi chuyển động thời trang trong và ngoài nước.</p>
-                </div>
-                <div>
-                    <h4>Chuyên Mục Chính</h4>
-                    <ul>
-                        <li><a href="trends.html">Xu Hướng Thời Trang</a></li>
-                        <li><a href="events.html">Sự Kiện & Show Diễn</a></li>
-                        <li><a href="detail.html">Bí Quyết Làm Đẹp</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Liên Kết Hệ Thống</h4>
-                    <ul>
-                        <li><a href="index.html">Sơ đồ trang (Sitemap)</a></li>
-                        <li><a href="login.html">Đăng nhập / Đăng ký tài khoản</a></li>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                    </ul>
-                </div>
+        <div class="container sitemap-container">
+            <div>
+                <h4>Fashion Hub Magazine</h4>
+                <p style="color: #888; font-size: 12px; padding-right: 20px;">Trang tin cung cấp các nội dung chuyên môn sâu sắc về thời trang, phong cách và nghệ thuật làm đẹp đương đại.</p>
             </div>
-            <div class="copyright">
-                &copy; 2026 FASHION HUB. All Rights Reserved. Thiết kế trang nhã bởi FashionHub Team.
+            <div>
+                <h4>Bản Đồ Trang (Site Map)</h4>
+                <ul>
+                    <li><a href="index.html">Trang Chủ Hệ Thống</a></li>
+                    <li><a href="trends.html">Xu Hướng & Báo Cáo VIP</a></li>
+                    <li><a href="events.html">Thước Phim Sự Kiện</a></li>
+                    <li><a href="detail.html">Góc Chi Tiết & Bình Luận</a></li>
+                </ul>
             </div>
+            <div>
+                <h4>Thành Viên</h4>
+                <ul>
+                    <li><a href="login.html">Cổng Đăng Nhập</a></li>
+                    <li><a href="#">Đăng Ký Bản Tin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; font-size: 11px; color: #555; margin-top: 30px;">
+            &copy; 2026 FASHION HUB. Đã đăng ký bản quyền kỹ thuật.
         </div>
     </footer>
-    
-    <script src="main.js"></script>
 
+    <script src="main.js"></script>
 </body>
 </html>
