@@ -4,28 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xu Hướng Thời Trang 2026 - FASHION HUB</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin:0; padding:0; background: #fff; color: #222; }
-        header { border-bottom: 1px solid #e0e0e0; padding: 20px 0; text-align: center;}
-        .logo { font-family: 'Georgia', serif; font-size: 35px; letter-spacing: 5px; font-weight: bold; margin-bottom: 10px; }
-        nav a { text-decoration: none; color: #000; margin: 0 20px; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
-        
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .page-title { font-family: 'Georgia', serif; font-size: 32px; text-align: center; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; }
-        
-        /* Bộ lọc danh mục */
-        .filter-bar { text-align: center; margin-bottom: 40px; }
-        .filter-btn { background: none; border: 1px solid #ccc; padding: 10px 20px; margin: 5px; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
-        .filter-btn.active, .filter-btn:hover { background: #000; color: #fff; border-color: #000; }
-        
-        .trends-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .trend-post { border: 1px solid #eee; background: #fff; display: block; text-decoration: none; color: inherit; transition: 0.3s; }
-        .trend-post:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .trend-img { height: 250px; background: #eee; }
-        .trend-info { padding: 20px; }
-        .trend-cat { font-size: 11px; text-transform: uppercase; color: #888; letter-spacing: 1px; }
-        .trend-title { font-family: 'Georgia', serif; font-size: 20px; margin: 10px 0; color: #000; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -33,7 +12,7 @@
         <div class="logo">FASHION HUB</div>
         <nav>
             <a href="index.html">Trang Chủ</a>
-            <a href="trends.html" style="color: #777;">Xu Hướng</a>
+            <a href="trends.html" class="active">Xu Hướng</a>
             <a href="events.html">Sự Kiện</a>
             <a href="login.html">Thành Viên</a>
         </nav>
@@ -50,7 +29,7 @@
 
         <div class="trends-grid">
             <a href="detail.html" class="trend-post" data-cat="modern">
-                <div class="trend-img" style="background: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500') center/cover;"></div>
+                <div class="trend-img" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500');"></div>
                 <div class="trend-info">
                     <span class="trend-cat">Hiện đại</span>
                     <h3 class="trend-title">Sự Trỗi Dậy Của Phong Cách Minimalist Trong Năm 2026</h3>
@@ -58,7 +37,7 @@
                 </div>
             </a>
             <a href="detail.html" class="trend-post" data-cat="classic">
-                <div class="trend-img" style="background: url('https://images.unsplash.com/photo-1505022610485-0249ba5b3675?w=500') center/cover;"></div>
+                <div class="trend-img" style="background-image: url('https://images.unsplash.com/photo-1505022610485-0249ba5b3675?w=500');"></div>
                 <div class="trend-info">
                     <span class="trend-cat">Cổ điển</span>
                     <h3 class="trend-title">Retro Vintage: Khi giá trị cũ hồi sinh mạnh mẽ</h3>
@@ -68,27 +47,6 @@
         </div>
     </div>
 
-    <script>
-        function filterCategory(category, btn) {
-            // Đổi active button
-            var buttons = document.getElementsByClassName('filter-btn');
-            for(var i=0; i<buttons.length; i++) buttons[i].classList.remove('active');
-            btn.classList.add('active');
-
-            // Lọc bài viết
-            var posts = document.getElementsByClassName('trend-post');
-            for(var i=0; i<posts.length; i++) {
-                if(category === 'all') {
-                    posts[i].style.display = 'block';
-                } else {
-                    if(posts[i].getAttribute('data-cat') === category) {
-                        posts[i].style.display = 'block';
-                    } else {
-                        posts[i].style.display = 'none';
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
