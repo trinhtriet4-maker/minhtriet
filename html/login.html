@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Nhập Thành Viên | FASHION HUB</title>
+    <title>Cổng Thành Viên | FASHION HUB</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .login-helper {
+        .login-util-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -14,58 +14,18 @@
             margin-top: -10px;
             margin-bottom: 20px;
         }
-        .login-helper a {
-            color: #777;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .login-helper a:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-        .social-login {
+        .login-util-flex a { color: #666; text-decoration: none; }
+        .login-util-flex a:hover { color: #000; text-decoration: underline; }
+        .oauth-divider {
             margin-top: 25px;
-            border-top: 1px dashed #e0e0e0;
+            border-top: 1px dashed var(--border-color);
             padding-top: 20px;
             text-align: center;
         }
-        .social-login p {
-            font-size: 11px;
-            text-transform: uppercase;
-            color: #777;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-        .social-btns {
-            display: flex;
-            gap: 10px;
-        }
-        .btn-oauth {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #e0e0e0;
-            background: #fff;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .btn-oauth:hover {
-            background: #000;
-            color: #fff;
-            border-color: #000;
-        }
-        .switch-form-text {
-            font-size: 12px;
-            text-align: center;
-            margin-top: 25px;
-            color: #555;
-        }
-        .switch-form-text a {
-            color: #000;
-            font-weight: bold;
-            text-decoration: none;
-        }
+        .oauth-divider p { font-size: 11px; text-transform: uppercase; color: #777; letter-spacing: 1px; margin-bottom: 15px; }
+        .oauth-btns-group { display: flex; gap: 10px; }
+        .btn-oauth-provider { flex: 1; padding: 11px; border: 1px solid var(--border-color); background: #fff; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.3s; }
+        .btn-oauth-provider:hover { background: #000; color: #fff; border-color: #000; }
     </style>
 </head>
 <body>
@@ -83,68 +43,43 @@
     <div class="login-container">
         <div class="login-card">
             <h2 style="font-family: 'Georgia', serif; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Đăng Nhập</h2>
-            <p style="text-align: center; font-size: 12px; color: #777; margin-bottom: 30px;">Chào mừng bạn trở lại với không gian phong cách 2026</p>
+            <p style="text-align: center; font-size: 12px; color: #777; margin-bottom: 30px;">Chào mừng bạn đến với không gian phong cách 2026</p>
             
             <form id="loginForm" onsubmit="validateLogin(event)">
-                
                 <div class="form-group">
-                    <label for="email">Email / Tài khoản</label>
+                    <label for="email">Email tài khoản</label>
                     <input type="email" id="email" placeholder="name@example.com" required autocomplete="username">
                 </div>
                 
                 <div class="form-group">
                     <label for="password">Mật khẩu</label>
                     <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
-                    <div id="errorMsg" style="color: #ff3b30; font-size: 12px; margin-top: 5px; display: none;"></div>
+                    <div id="errorMsg" style="color: var(--accent-red); font-size: 12px; margin-top: 5px; display: none;"></div>
                 </div>
 
-                <div class="login-helper">
+                <div class="login-util-flex">
                     <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
                         <input type="checkbox" style="width: auto; margin: 0;"> Ghi nhớ tôi
                     </label>
-                    <a href="#" onclick="alert('Tính năng khôi phục mật khẩu qua Email đang được bảo trì!')">Quên mật khẩu?</a>
+                    <a href="#" onclick="alert('Hệ thống gửi mã khôi phục qua Email hiện đang bảo trì!')">Quên mật khẩu?</a>
                 </div>
                 
-                <button type="submit" class="btn-black">Vào hệ thống</button>
+                <button type="submit" class="btn-submit-black">Vào hệ thống</button>
             </form>
 
-            <div class="social-login">
-                <p>Hoặc đăng nhập nhanh bằng</p>
-                <div class="social-btns">
-                    <button class="btn-oauth" onclick="alert('Đang kết nối API Google...')">Google</button>
-                    <button class="btn-oauth" onclick="alert('Đang kết nối API Apple ID...')">Apple ID</button>
+            <div class="oauth-divider">
+                <p>Hoặc kết nối nhanh bằng</p>
+                <div class="oauth-btns-group">
+                    <button class="btn-oauth-provider" onclick="alert('Đang kết nối API Google...')">Google</button>
+                    <button class="btn-oauth-provider" onclick="alert('Đang kết nối API Apple ID...')">Apple ID</button>
                 </div>
             </div>
 
-            <div class="switch-form-text">
-                Bạn chưa có tài khoản? <a href="#" onclick="alert('Hệ thống đang tạm ngưng mở số lượng thành viên mới!')">Đăng ký ngay</a>
+            <div style="font-size: 12px; text-align: center; margin-top: 25px; color: #555;">
+                Bạn chưa có tài khoản? <a href="#" style="color:#000; font-weight:bold; text-decoration:none;" onclick="alert('Hệ thống đang tạm ngừng mở cổng đăng ký thành viên mới!')">Đăng ký ngay</a>
             </div>
-            
-            <p style="font-size: 11px; color: #888; text-align: center; margin-top: 25px; line-height: 1.4;">
-                * Sau khi đăng nhập thành công, bạn sẽ được tự động chuyển hướng về Trang Chủ và mở khóa toàn bộ nội dung VIP tại trang <b>Xu Hướng</b>.
-            </p>
         </div>
     </div>
-
-    <footer>
-        <div class="container sitemap-grid">
-            <div>
-                <h4 style="font-family: 'Georgia', serif; text-transform: uppercase; margin-bottom: 15px;">Fashion Hub</h4>
-                <p style="color: #aaa; font-size: 12px; max-width: 300px;">Tạp chí thời trang, xu hướng sàn diễn và phong cách sống đương đại cập nhật liên tục.</p>
-            </div>
-            <div>
-                <h4 style="font-family: 'Georgia', serif; text-transform: uppercase; margin-bottom: 15px;">Liên kết nhanh</h4>
-                <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px;">
-                    <li style="margin-bottom: 8px;"><a href="index.html">Trang Chủ</a></li>
-                    <li style="margin-bottom: 8px;"><a href="trends.html">Xu Hướng Thời Trang</a></li>
-                    <li style="margin-bottom: 8px;"><a href="events.html">Sự Kiện Runway</a></li>
-                </ul>
-            </div>
-        </div>
-        <div style="text-align: center; font-size: 11px; color: #555; margin-top: 30px; border-top: 1px solid #222; padding-top: 20px;">
-            &copy; 2026 FASHION HUB. Tất cả quyền được bảo lưu.
-        </div>
-    </footer>
 
     <script src="main.js"></script>
 </body>
