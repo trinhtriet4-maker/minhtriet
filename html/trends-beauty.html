@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STREET CHIC - Xu Hướng & Làm Đẹp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="brand-logo">STREET<span>CHIC</span></div>
+        <nav class="nav-bar">
+            <ul class="menu-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="news.html">Tin Tức & Sự Kiện</a></li>
+                <li><a href="trends-beauty.html" class="active-link">Xu Hướng & Làm Đẹp</a></li>
+                <li><a href="login.html">Thành Viên</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        <section class="topic-block">
+            <div class="block-header">
+                <h2>Cẩm Nang Xu Hướng Đương Đại</h2>
+            </div>
+            <div class="cards-layout">
+                <article class="modern-card">
+                    <div class="img-zoom-holder">
+                        <!-- Nhúng Iframe Youtube ổn định xem được 100% -->
+                        <iframe width="100%" height="340" src="https://www.youtube.com/embed/LN97C6VwS9o?autoplay=1&mute=1&loop=1&playlist=LN97C6VwS9o" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-content">
+                        <span class="category-lbl">Thước Phim</span>
+                        <h3>Cận cảnh Runway phối đồ Streetwear bụi bặm</h3>
+                        <p>Học hỏi cách phối các lớp layer quần áo oversize cực đỉnh qua video tổng hợp sàn diễn.</p>
+                    </div>
+                </article>
+
+                <article class="modern-card">
+                    <div class="img-zoom-holder">
+                        <img src="https://images.unsplash.com/photo-1505022610485-0249ba5b3675?auto=format&fit=crop&w=600&q=80" alt="Trend Wardrobe">
+                    </div>
+                    <div class="card-content">
+                        <span class="category-lbl">Xu Hướng Cá Tính</span>
+                        <h3>Sự lên ngôi của phong cách túi đa năng Cargo Bags</h3>
+                        <p>Tiện lợi, mạnh mẽ và gai góc là những gì chiếc túi này mang lại cho set đồ của bạn.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="interaction-block">
+            <h3>Chủ đề liên quan liên kết</h3>
+            <div class="links-co-relation">
+                <a href="news.html">➔ Đọc tin tức về sự kiện Sneakerhead phối hợp cùng túi Cargo</a>
+</div>
+
+            <h2 class="block-title">Phản hồi bạn đọc</h2>
+            <div id="comment-list" class="feedback-container">
+                <div class="feedback-item">
+                    <h5>Minh Quân</h5>
+                    <p>Video phối đồ bánh cuốn quá, quả túi cargo phối với hoodie nhìn chất chơi thực sự.</p>
+                </div>
+            </div>
+
+            <form id="comment-form" class="modern-form">
+                <div class="input-box"><input type="text" id="comment-name" required placeholder="Tên của bạn"></div>
+                <div class="input-box"><textarea id="comment-content" rows="3" required placeholder="Nhập ý kiến bình luận phản hồi..."></textarea></div>
+                <button type="submit" class="submit-btn">Gửi bài</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 STREET CHIC Project.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
