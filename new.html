@@ -3,252 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÉLAN - Tạp Chí Thời Trang & Xu Hướng</title>
+    <title>ÉLAN BOUTIQUE - Bộ Sưu Tập Thời Trang Cao Cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset CSS & Fonts */
-        * {
+        /* Toàn bộ hệ thống Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111111;
+            --text-muted: #777777;
+            --accent-color: #9e7a56;
+            --border-color: #eeeeee;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Montserrat', Arial, sans-serif;
+        }
+
         body {
-            font-family: 'Playfair Display', 'Georgia', serif;
-            background-color: #fcfcfc;
-            color: #111;
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
         }
+
         a {
             text-decoration: none;
             color: inherit;
-            transition: opacity 0.3s;
         }
-        a:hover {
-            opacity: 0.7;
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
         }
 
         /* Header */
         header {
-            border-bottom: 1px solid #eee;
-            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            padding: 30px 0;
+            text-align: center;
             background: #fff;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            padding: 0 20px;
-        }
+
         .logo {
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: 5px;
+            font-family: var(--font-serif);
+            font-size: 32px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Main Layout */
-        main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Featured Post (Hero) */
-        .featured-post {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
-            align-items: center;
-        }
-        .featured-img img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-        .tag {
-            font-family: 'Arial', sans-serif;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #888;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-        .featured-info h2 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-        .featured-info p {
-            font-family: 'Arial', sans-serif;
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        /* News Grid */
-        .section-title {
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            text-align: center;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 1px;
-            background: #111;
-            margin: 10px auto 0;
-        }
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        .news-card {
-            background: #fff;
-            border: 1px solid #f0f0f0;
-            padding: 15px;
-        }
-        .card-img img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
+            font-weight: 600;
             margin-bottom: 15px;
         }
-        .card-info h3 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 10px;
-            line-height: 1.4;
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 35px;
         }
 
-        /* Footer */
-        footer {
-            background: #111;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.8rem;
+        nav ul li a {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Thống kê & Bộ lọc sơ bộ */
+        .catalog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0 20px;
+            font-size: 12px;
+            text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 80px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
         }
 
-        /* Responsive (Mobile) */
+        .filter-btn {
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Lưới Sản phẩm (4 cột trên Desktop) */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px 25px;
+            margin-bottom: 80px;
+        }
+
+        .product-card {
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Hiệu ứng tráo ảnh khi Hover */
+        .product-image-wrap {
+            position: relative;
+            height: 480px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .product-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .img-hover {
+            opacity: 0;
+        }
+
+        .product-card:hover .img-main {
+            opacity: 0;
+        }
+
+        .product-card:hover .img-hover {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        /* Nút thêm nhanh ẩn dưới chân ảnh */
+        .quick-add {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 12px 0;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .product-image-wrap:hover .quick-add {
+            transform: translateY(0);
+        }
+
+        .quick-add:hover {
+            background-color: var(--text-color);
+            color: #fff;
+        }
+
+        /* Thông tin sản phẩm */
+        .product-info {
+            text-align: left;
+        }
+
+        .product-title {
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .product-price {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .product-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        /* Footer tối giản */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* Responsive linh hoạt */
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .product-image-wrap {
+                height: 400px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .featured-post {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px 15px;
             }
-            .featured-img img {
-                height: 300px;
-            }
-            .featured-info h2 {
-                font-size: 1.8rem;
+            .product-image-wrap {
+                height: 320px;
             }
             nav ul {
                 gap: 15px;
                 flex-wrap: wrap;
-                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Thanh điều hướng đầu trang -->
     <header>
-        <div class="header-container">
+        <div class="container">
             <div class="logo"><a href="#">ÉLAN</a></div>
             <nav>
                 <ul>
-                    <li><a href="#">Xu hướng</a></li>
-                    <li><a href="#">Bộ sưu tập</a></li>
-                    <li><a href="#">Street Style</a></li>
-                    <li><a href="#">Làm đẹp</a></li>
-                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Mới về</a></li>
+                    <li><a href="#">Áo Blazer</a></li>
+                    <li><a href="#">Váy & Đầm</a></li>
+                    <li><a href="#">Quần & Tủ đồ cơ bản</a></li>
+                    <li><a href="#">Bộ sưu tập đặc biệt</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Bài viết nổi bật -->
-        <section class="featured-post">
-            <div class="featured-img">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Fashion Featured">
+    <!-- Khu vực danh mục sản phẩm chính -->
+    <main class="container">
+        
+        <div class="catalog-meta">
+            <div class="filter-btn">Bộ lọc +</div>
+            <div>Hiển thị 4 sản phẩm tiêu biểu</div>
+            <div>Sắp xếp: Mới nhất</div>
+        </div>
+
+        <section class="product-grid">
+            
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                <div class="product-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80" alt="Sản phẩm 1" class="img-main">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" alt="Sản phẩm 1 Hover" class="img-hover">
+                    <div class="quick-add">Thêm nhanh vào giỏ</div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Hàng mới về</span>
+                    <h3 class="product-title">Đầm Lụa Draping Dáng Dài Khuy Ngọc Trai</h3>
+                    <div class="product-price">2,450,000 đ</div>
+                </div>
             </div>
-            <div class="featured-info">
-                <span class="tag">Xu hướng Thu-Đông 2026</span>
-                <h2>Sự Trỗi Dậy Của Phong Cách "Quiet Luxury" Trong Kỷ Nguyên Mới</h2>
-                <p>Không còn những logo bản lớn hay màu sắc quá rực rỡ, xu hướng thời trang cuối năm 2026 hướng tới sự tinh tế tối giản, chất liệu cao cấp và những đường cắt may trường tồn với thời gian.</p>
-                <a href="#" style="font-family: Arial; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; border-bottom: 2px solid #111; padding-bottom: 5px;">Đọc bài viết</a>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                <div class="product-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1548624149-f1bc346f8859?auto=format&fit=crop&w=600&q=80" alt="Sản phẩm 2" class="img-main">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Sản phẩm 2 Hover" class="img-hover">
+                    <div class="quick-add">Thêm nhanh vào giỏ</div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Limited Edition</span>
+                    <h3 class="product-title">Áo Khoác Trench Coat Dạ Cashmere Màu Kem</h3>
+                    <div class="product-price">4,800,000 đ</div>
+                </div>
             </div>
-        </section>
 
-        <h2 class="section-title">Tin tức mới nhất</h2>
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <div class="product-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1505022610485-0249ba5b3675?auto=format&fit=crop&w=600&q=80" alt="Sản phẩm 3" class="img-main">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" alt="Sản phẩm 3 Hover" class="img-hover">
+                    <div class="quick-add">Thêm nhanh vào giỏ</div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Xu hướng</span>
+                    <h3 class="product-title">Áo Blazer Oversize Cắt May Thủ Công</h3>
+                    <div class="product-price">1,950,000 đ</div>
+                </div>
+            </div>
 
-        <!-- Danh sách tin tức -->
-        <section class="news-grid">
-            <!-- Card 1 -->
-            <article class="news-card">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80" alt="News 1">
+            <!-- Sản phẩm 4 -->
+            <div class="product-card">
+                <div class="product-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80" alt="Sản phẩm 4" class="img-main">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="Sản phẩm 4 Hover" class="img-hover">
+                    <div class="quick-add">Thêm nhanh vào giỏ</div>
                 </div>
-                <div class="card-info">
-                    <span class="tag">Tuần lễ thời trang</span>
-                    <h3><a href="#">Điểm lại những khoảnh khắc ấn tượng nhất tại Paris Fashion Week</a></h3>
+                <div class="product-info">
+                    <span class="product-tag">Cơ bản</span>
+                    <h3 class="product-title">Chân Váy Xếp Ly Satin Tơ Tằm Dáng Suông</h3>
+                    <div class="product-price">1,350,000 đ</div>
                 </div>
-            </article>
+            </div>
 
-            <!-- Card 2 -->
-            <article class="news-card">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=500&q=80" alt="News 2">
-                </div>
-                <div class="card-info">
-                    <span class="tag">Street Style</span>
-                    <h3><a href="#">Muôn kiểu phối đồ với boots cổ cao của giới trẻ Seoul</a></h3>
-                </div>
-            </article>
-
-            <!-- Card 3 -->
-            <article class="news-card">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80" alt="News 3">
-                </div>
-                <div class="card-info">
-                    <span class="tag">Trang sức</span>
-                    <h3><a href="#">Phụ kiện metallic: Điểm nhấn không thể thiếu cho bữa tiệc cuối năm</a></h3>
-                </div>
-            </article>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Chân trang -->
     <footer>
-        <p>&copy; 2026 ÉLAN MAGAZINE. ALL RIGHTS RESERVED.</p>
+        <p>&copy; 2026 ÉLAN BOUTIQUE. CHẤT LƯỢNG ĐỊNH HÌNH PHONG CÁCH.</p>
     </footer>
 
 </body>
