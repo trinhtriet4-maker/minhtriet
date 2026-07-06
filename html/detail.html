@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Bài Viết - FASHION HUB</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; padding:0; background: #fcfcfc; color: #222; line-height: 1.8; }
+        header { border-bottom: 1px solid #e0e0e0; padding: 20px 0; text-align: center; background: #fff;}
+        .logo { font-family: 'Georgia', serif; font-size: 35px; letter-spacing: 5px; font-weight: bold; margin-bottom: 10px; }
+        nav a { text-decoration: none; color: #000; margin: 0 20px; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; background: #fff; border: 1px solid #eee; padding: 40px; }
+        .post-header .cat { text-transform: uppercase; font-size: 12px; color: #888; letter-spacing: 2px; }
+        .post-title { font-family: 'Georgia', serif; font-size: 32px; margin: 10px 0 20px 0; line-height: 1.4; }
+        .post-body img { width: 100%; height: auto; margin: 30px 0; }
+        
+        .related-box { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; }
+        .related-box h4 { font-family: 'Georgia', serif; font-size: 18px; margin-bottom: 15px; }
+        .related-box ul { padding-left: 20px; }
+        .related-box ul li { margin-bottom: 8px; }
+        .related-box ul li a { color: #000; text-decoration: none; font-size: 15px; }
+        .related-box ul li a:hover { text-decoration: underline; }
+        
+        /* Bình luận */
+        .comment-section { margin-top: 50px; border-top: 2px solid #000; padding-top: 30px; }
+        .comment-section h3 { font-family: 'Georgia', serif; margin-bottom: 20px; }
+        .comment-list { margin-bottom: 30px; }
+        .comment-item { background: #f9f9f9; padding: 15px; border-left: 3px solid #000; margin-bottom: 15px; }
+        .comment-item strong { font-size: 14px; display: block; margin-bottom: 5px; }
+        .comment-form input, .comment-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; box-sizing: border-box; }
+        .comment-form button { background: #000; color: #fff; border: none; padding: 12px 25px; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">FASHION HUB</div>
+        <nav>
+            <a href="index.html">Trang Chủ</a>
+            <a href="trends.html">Xu Hướng</a>
+            <a href="events.html">Sự Kiện</a>
+            <a href="login.html">Thành Viên</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="post-header">
+            <span class="cat">Hiện đại / Phong cách sống</span>
+            <h1 class="post-title">Sự Trỗi Dậy Của Phong Cách Minimalist Trong Năm 2026</h1>
+            <p style="color: #666; font-size: 13px;">Được viết bởi: <b>Khánh Linh</b> | Cập nhật lúc: 06/07/2026</p>
+        </div>
+        
+        <div class="post-body">
+            <p>Thời trang năm 2026 ghi nhận bước chuyển mình lớn khi thế giới bắt đầu tái định nghĩa lại sự xa xỉ. Không còn là những logo bản to phóng đại hay họa tiết rườm rà, sự sang trọng tinh tế giờ nằm ở chất liệu cao cấp và những đường cắt may phóng khoáng, dứt khoát.</p>
+            <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800" alt="Minimalist Fashion">
+            <p>Các tone màu chủ đạo dịch chuyển rõ rệt sang dải màu lặng (muted tones) như màu beige cát, xám khói, kem sữa và olive trầm. Điểm mấu chốt của phong cách này là bạn mua ít hơn nhưng chất lượng hơn.</p>
+        </div>
+
+        <!-- Links liên quan nội dung vừa xem -->
+        <div class="related-box">
+            <h4>Nội dung liên quan dành cho bạn</h4>
+            <ul>
+                <li><a href="trends.html">Lịch sử trường phái Tối Giản qua các thập niên</a></li>
+                <li><a href="events.html">Xem lại Fashion Show Thu-Đông ứng dụng chất liệu bền vững</a></li>
+            </ul>
+        </div>
+
+        <!-- Comments phản hồi ý kiến -->
+        <div class="comment-section">
+            <h3>Ý kiến bạn đọc (<span id="count">1</span>)</h3>
+            <div class="comment-list" id="boxComments">
+                <div class="comment-item">
+                    <strong>Hà An (Designer)</strong>
+                    <p>Triết lý bài viết cực kỳ tiệm cận với định hướng thiết kế năm nay của mình. Rất bổ ích!</p>
+                </div>
+            </div>
+
+            <div class="comment-form">
+                <h4>Gửi phản hồi của bạn</h4>
+                <input type="text" id="cmtName" placeholder="Tên của bạn">
+                <textarea id="cmtContent" rows="4" placeholder="Viết bình luận tại đây..."></textarea>
+                <button onclick="postComment()">Gửi ý kiến</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function postComment() {
+            var name = document.getElementById('cmtName').value.trim();
+            var text = document.getElementById('cmtContent').value.trim();
+            if(name === "" || text === "") { alert("Vui lòng điền đủ tên và nội dung!"); return; }
+
+            var box = document.getElementById('boxComments');
+            var item = document.createElement('div');
+            item.className = "comment-item";
+            item.innerHTML = "<strong>" + name + "</strong><p>" + text + "</p>";
+            box.appendChild(item);
+
+            // Reset form
+            document.getElementById('cmtName').value = "";
+            document.getElementById('cmtContent').value = "";
+            document.getElementById('count').innerText = document.getElementsByClassName('comment-item').length;
+        }
+    </script>
+</body>
+</html>
