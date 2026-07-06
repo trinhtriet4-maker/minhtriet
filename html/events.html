@@ -1,68 +1,44 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sự Kiện Thời Trang Quốc Tế - FASHION HUB</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin:0; padding:0; background: #fff; color: #222; }
-        header { border-bottom: 1px solid #e0e0e0; padding: 20px 0; text-align: center;}
-        .logo { font-family: 'Georgia', serif; font-size: 35px; letter-spacing: 5px; font-weight: bold; margin-bottom: 10px; }
-        nav a { text-decoration: none; color: #000; margin: 0 20px; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
-        
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        .page-title { font-family: 'Georgia', serif; font-size: 32px; text-align: center; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; }
-        
-        .event-card { border: 1px solid #eee; margin-bottom: 50px; background: #fff; }
-        .event-header { padding: 25px; }
-        .event-header h2 { font-family: 'Georgia', serif; margin: 0 0 10px 0; font-size: 24px; }
-        .event-meta { font-size: 12px; color: #777; text-transform: uppercase; letter-spacing: 1px; }
-        
-        /* Khu vực Media (Phim / Thước phim catwalk) */
-        .video-container { background: #000; position: relative; padding-bottom: 56.25%; /* Tỷ lệ màn hình 16:9 */ height: 0; overflow: hidden; }
-        .video-container iframe, .video-container video { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
-        
-        .event-footer { padding: 25px; font-size: 15px; line-height: 1.6; background: #fcfcfc; }
-    </style>
+    <meta charset="UTF-8"><title>Sự Kiện Sàn Diễn - FASHION HUB</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="logo">FASHION HUB</div>
         <nav>
             <a href="index.html">Trang Chủ</a>
             <a href="trends.html">Xu Hướng</a>
-            <a href="events.html" style="color: #777;">Sự Kiện</a>
-            <a href="login.html">Thành Viên</a>
+            <a href="events.html" class="active">Sự Kiện</a>
+            <span id="member-nav"><a href="login.html">Thành Viên</a></span>
         </nav>
     </header>
 
     <div class="container">
-        <h1 class="page-title">Sự Kiện & Sàn Diễn</h1>
-
-        <!-- Sự kiện 1 -->
-        <div class="event-card">
-            <div class="event-header">
-                <span class="event-meta">Địa điểm: Paris, Pháp | Tháng 06-2026</span>
-                <h2>Tuần Lễ Thời Trang Paris Haute Couture 2026</h2>
+        <h1 class="section-title">Sàn Diễn & Phim Sự Kiện</h1>
+        
+        <div class="event-card" style="border: 1px solid var(--border); margin-top:30px;">
+            <div class="event-header" style="padding:20px;">
+                <span class="event-meta" style="color:var(--text-muted); font-size:12px;">SỰ KIỆN QUỐC TẾ</span>
+                <h2>Paris Haute Couture Fashion Week 2026</h2>
             </div>
             
-            <!-- Nhúng Video/Movie Giả lập (Có thể thay đường link mp4 thật của bạn vào đây) -->
             <div class="video-container">
                 <video controls poster="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1000">
                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    Trình duyệt của bạn không hỗ trợ thẻ video.
                 </video>
             </div>
 
-            <div class="event-footer">
-                <p>Chiêm ngưỡng thước phim (movie) ghi lại những bộ sưu tập đắt giá, kỳ công nhất từ các nhà mốt hàng đầu danh tiếng. Sự kiện quy tụ hàng nghìn ngôi sao toàn cầu tham dự.</p>
-                <a href="detail.html" style="color:#000; font-weight:bold; text-decoration:none;">Đọc bài viết phân tích chuyên sâu →</a>
+            <div class="event-footer" style="padding:20px;">
+                <p>Sự kiện bùng nổ với hàng loạt thiết kế ứng dụng phom dáng tối giản hiện đại.</p>
+                <!-- LIÊN KẾT NGƯỢC LẠI XU HƯỚNG -->
+                <a href="trends.html" class="cross-link-badge" style="background:#000; color:#fff;">← Tìm hiểu Xu Hướng Tối Giản tạo nên Show diễn này</a>
+                <a href="detail.html" class="cross-link-badge">Xem Bình luận phản hồi của giới điệu mộ</a>
             </div>
         </div>
     </div>
-    
-    <script src="main.js"></script>
 
+    <script src="main.js"></script>
 </body>
 </html>
