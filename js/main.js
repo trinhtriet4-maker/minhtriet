@@ -1,16 +1,16 @@
 /* =========================================================================
-   FASHION HUB - CORE LOGIC & INTERCONNECTION (2026)
+   FASHION HUB - CORE CORE INTERACTION LOGIC (2026)
    ========================================================================= */
 
-// Tự động chạy khi bất kỳ trang nào được tải để đồng bộ trạng thái hệ thống
+// Tự động kích hoạt khi cấu trúc DOM hoàn thành để đồng bộ trạng thái hệ thống
 document.addEventListener("DOMContentLoaded", function() {
-    syncNavigationAndVIP();
+    checkGlobalAuthStatus();
 });
 
 /**
- * 1. ĐỒNG BỘ MENU & TRẠNG THÁI NỘI DUNG VIP THÀNH VIÊN
+ * 1. ĐỒNG BỘ TRẠNG THÁI THÀNH VIÊN TOÀN HỆ THỐNG
  */
-function syncNavigationAndVIP() {
+function checkGlobalAuthStatus() {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const userEmail = localStorage.getItem("userEmail");
     
@@ -18,28 +18,27 @@ function syncNavigationAndVIP() {
     const vipContent = document.getElementById("vip-content");
     const vipLock = document.getElementById("vip-lock");
 
-    // Nếu đã đăng nhập thành công
     if (isLoggedIn === "true" && userEmail) {
-        // Đổi chữ "Thành Viên" trên thanh Menu thành Tên và Nút đăng xuất nhanh
+        // Cập nhật thanh điều hướng thông minh khi đã đăng nhập
         if (memberNav) {
             const shortName = userEmail.split('@')[0];
-            memberNav.innerHTML = `<span class="user-welcome">Hi, ${shortName}</span> | <a href="#" onclick="handleLogout(event)" class="logout-btn">Đăng xuất</a>`;
+            memberNav.innerHTML = `<span class="user-welcome">Hi, ${shortName}</span> | <a href="#" onclick="processLogout(event)" class="logout-btn">Đăng xuất</a>`;
         }
-        // Mở khóa phân vùng VIP (Hiển thị nội dung ẩn tại trang Xu Hướng)
+        // Mở khóa phân vùng dữ liệu đặc quyền (VIP) tại trang Xu hướng
         if (vipContent) vipContent.style.display = "block";
         if (vipLock) vipLock.style.display = "none";
     } else {
-        // Nếu chưa đăng nhập hoặc đã đăng xuất
+        // Trạng thái mặc định khi chưa xác thực tài khoản
         if (vipContent) vipContent.style.display = "none";
         if (vipLock) vipLock.style.display = "block";
     }
 }
 
 /**
- * 2. XỬ LÝ ĐĂNG NHẬP (Form Submission)
+ * 2. XỬ LÝ ĐĂNG NHẬP CLIENT-SIDE
  */
 function validateLogin(event) {
-    event.preventDefault(); // Chặn hành vi tải lại trang mặc định của form
+    event.preventDefault(); 
     
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
@@ -50,69 +49,58 @@ function validateLogin(event) {
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
 
-    // Kiểm tra dữ liệu đầu vào cơ bản
     if (email === "" || password === "") {
         if (errorMsg) {
             errorMsg.style.display = "block";
-            errorMsg.innerText = "Tài khoản và mật khẩu không được để trống!";
+            errorMsg.innerText = "Vui lòng không để trống Email và Mật khẩu!";
         }
         return;
     }
 
-    // Giả lập tài khoản đúng (Cho phép đăng nhập với mọi tài khoản hợp lệ phía Client)
+    // Cơ chế lưu trạng thái phiên đăng nhập vào bộ nhớ trình duyệt
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("userEmail", email);
     
-    alert("Đăng nhập thành viên thành công! Hệ thống đang chuyển hướng...");
-    window.location.href = "index.html"; // Điều hướng thẳng về trang chủ sau khi xử lý xong
+    alert("Đăng nhập thành công! Hệ thống đang chuyển hướng về Trang Chủ.");
+    window.location.href = "index.html"; 
 }
 
 /**
- * 3. XỬ LÝ ĐĂNG XUẤT (Logout)
+ * 3. XỬ LÝ ĐĂNG XUẤT AN TOÀN
  */
-function handleLogout(event) {
+function processLogout(event) {
     if (event) event.preventDefault();
-    
-    if (confirm("Bạn có chắc chắn muốn đăng xuất tài khoản thành viên không?")) {
+    if (confirm("Bạn có chắc chắn muốn đăng xuất khỏi tài khoản thành viên?")) {
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("userEmail");
-        alert("Đã đăng xuất tài khoản an toàn.");
-        window.location.reload(); // Làm mới trang để cập nhật lại giao diện menu
+        alert("Đã đăng xuất tài khoản thành công.");
+        window.location.reload(); 
     }
 }
 
 /**
- * 4. BỘ LỌC TƯƠNG TÁC XU HƯỚNG (Category Filter Tabs)
+ * 4. BỘ LỌC TƯƠNG TÁC DANH MỤC XU HƯỚNG & LÀM ĐẸP
  */
 function filterCategory(category, buttonElement) {
-    // Đổi trạng thái hiển thị "active" của các nút bấm bộ lọc
     const buttons = document.getElementsByClassName('filter-btn');
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].classList.remove('active');
     }
-    if (buttonElement) {
-        buttonElement.classList.add('active');
-    }
+    if (buttonElement) buttonElement.classList.add('active');
 
-    // Ẩn hoặc Hiện các Card bài viết dựa theo thuộc tính data-cat
     const posts = document.getElementsByClassName('trend-post');
     for (let i = 0; i < posts.length; i++) {
         const postCategory = posts[i].getAttribute('data-cat');
-        
-        if (category === 'all') {
-            posts[i].style.display = 'block'; // Hiện tất cả
+        if (category === 'all' || postCategory === category) {
+            posts[i].style.display = 'block';
         } else {
-            if (postCategory === category) {
-                posts[i].style.display = 'block'; // Trùng khớp danh mục -> Hiện
-            } else {
-                posts[i].style.display = 'none';  // Không trùng khớp -> Ẩn
-            }
+            posts[i].style.display = 'none';
         }
     }
 }
 
 /**
- * 5. CHỨC NĂNG ĐĂNG BÌNH LUẬN (Comment Management)
+ * 5. TRÌNH QUẢN LÝ BÌNH LUẬN & PHẢN HỒI Ý KIẾN CHỐNG XSS
  */
 function postComment() {
     const nameInput = document.getElementById('cmtName');
@@ -126,35 +114,29 @@ function postComment() {
     const text = contentInput.value.trim();
 
     if (name === "" || text === "") {
-        alert("Vui lòng điền đầy đủ tên và nội dung ý kiến phản hồi!");
+        alert("Vui lòng nhập đầy đủ Tên và Nội dung bình luận phản hồi!");
         return;
     }
 
-    // Tạo phần tử div mới chứa bình luận
-    const newCommentItem = document.createElement('div');
-    newCommentItem.className = "comment-item";
+    const newComment = document.createElement('div');
+    newComment.className = "comment-item";
     
-    // Sử dụng hàm escapeHTML để xử lý lọc chuỗi độc hại, ngăn ngừa lỗi bảo mật XSS
-    newCommentItem.innerHTML = `<strong>${escapeHTML(name)}</strong><p>${escapeHTML(text)}</p>`;
+    // Khử độc chuỗi nhập vào bằng escapeHTML để tránh tấn công Cross-Site Scripting (XSS)
+    newComment.innerHTML = `<strong>${sanitizeHTML(name)}</strong><p>${sanitizeHTML(text)}</p>`;
     
-    // Đẩy bình luận mới vào danh sách hiển thị
-    commentList.appendChild(newCommentItem);
+    commentList.appendChild(newComment);
 
-    // Xóa dữ liệu cũ trong form để người dùng có thể nhập tiếp bình luận khác
+    // Reset Form nhập liệu
     nameInput.value = "";
     contentInput.value = "";
 
-    // Đồng bộ và đếm lại tổng số lượng bình luận hiện có trên trang
+    // Cập nhật bộ đếm bình luận thời gian thực
     if (countSpan) {
-        const totalComments = commentList.getElementsByClassName('comment-item').length;
-        countSpan.innerText = totalComments;
+        countSpan.innerText = commentList.getElementsByClassName('comment-item').length;
     }
 }
 
-/**
- * Hàm hỗ trợ mã hóa ký tự đặc biệt, bảo vệ website khỏi tấn công Scripting (XSS)
- */
-function escapeHTML(str) {
+function sanitizeHTML(str) {
     return str.replace(/&/g, "&amp;")
               .replace(/</g, "&lt;")
               .replace(/>/g, "&gt;")
