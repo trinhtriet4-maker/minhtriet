@@ -1,353 +1,55 @@
-/* =========================================================================
-   FASHION HUB - HỆ THỐNG PHONG CÁCH MINIMALIST LUXURY
-   ========================================================================= */
-
-/* Biến màu sắc hệ thống */
 :root {
     --primary: #000000;
-    --secondary: #333333;
-    --bg-light: #ffffff;
     --bg-cream: #f4f1ea;
-    --bg-gray: #fcfcfc;
     --text-main: #222222;
     --text-muted: #777777;
-    --border-color: #e0e0e0;
-    --accent-red: #ff3b30;
+    --border: #e0e0e0;
 }
 
-/* Định dạng cấu trúc nền tảng cơ bản */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: var(--bg-light);
-    color: var(--text-main);
-    line-height: 1.6;
-}
+body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; color: var(--text-main); background: #fff; line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+/* Header Menu */
+header { border-bottom: 1px solid var(--border); padding: 20px 0; text-align: center; background: #fff; position: sticky; top: 0; z-index: 1000; }
+.logo { font-family: 'Georgia', serif; font-size: 32px; letter-spacing: 4px; font-weight: bold; margin-bottom: 10px; }
+nav a { text-decoration: none; color: #000; margin: 0 15px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+nav a.active { color: var(--text-muted); border-bottom: 1px solid #000; }
+#member-nav { display: inline-block; margin-left: 15px; }
 
-/* Thanh điều hướng (Header Menu) */
-header {
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px 0;
-    text-align: center;
-    background: var(--bg-light);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+/* Hero */
+.hero { background: #eaeaea; height: 350px; display: flex; align-items: center; justify-content: center; text-align: center; margin-bottom: 40px; }
+.hero h2 { font-family: 'Georgia', serif; font-size: 36px; letter-spacing: 2px; margin: 0; }
 
-.logo {
-    font-family: 'Georgia', serif;
-    font-size: 35px;
-    letter-spacing: 5px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
+/* Grid & Cards */
+.section-title { font-family: 'Georgia', serif; text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 10px; letter-spacing: 2px; margin-top: 40px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
+.card { border: 1px solid var(--border); overflow: hidden; text-decoration: none; color: inherit; transition: 0.3s; background: #fff; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.card-img { height: 220px; background-size: cover; background-position: center; background-color: #eee; }
+.card-body { padding: 20px; }
+.card-body h3 { font-family: 'Georgia', serif; margin: 0 0 10px 0; font-size: 20px; }
 
-nav a {
-    text-decoration: none;
-    color: var(--primary);
-    margin: 0 20px;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    padding-bottom: 5px;
-}
+/* Liên kết chéo thông minh giữa các trang (Cross-links Badges) */
+.cross-link-badge { display: inline-block; background: var(--bg-cream); color: #555; padding: 5px 10px; font-size: 11px; text-transform: uppercase; text-decoration: none; margin-top: 10px; font-weight: bold; border: 1px solid #ddd; transition: 0.3s; }
+.cross-link-badge:hover { background: #000; color: #fff; }
 
-nav a:hover, nav a.active {
-    color: var(--text-muted);
-    border-bottom: 1px solid var(--primary);
-}
+/* Khóa nội dung Thành viên */
+.lock-box { background: var(--bg-cream); padding: 40px; text-align: center; border: 1px dashed #000; margin: 30px 0; }
+.lock-box h3 { font-family: 'Georgia', serif; margin-0-0-10px-0; }
+.btn-go-login { display: inline-block; background: #000; color: #fff; padding: 10px 20px; text-decoration: none; text-transform: uppercase; font-size: 12px; font-weight: bold; margin-top: 15px; }
 
-/* Khu vực Hero Banner trang chủ */
-.hero {
-    position: relative;
-    height: 500px;
-    background: #eaeaea;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.hero-content h2 {
-    font-family: 'Georgia', serif;
-    font-size: 45px;
-    margin: 0;
-    letter-spacing: 2px;
-}
-
-/* Tiêu đề phân vùng chủ đề */
-.section-title, .page-title {
-    font-family: 'Georgia', serif;
-    font-size: 24px;
-    text-transform: uppercase;
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 10px;
-    margin-top: 40px;
-    letter-spacing: 2px;
-}
-
-.page-title {
-    font-size: 32px;
-    text-align: center;
-    border: none;
-}
-
-/* Grid layout hiển thị các bài viết hot */
-.grid-topics, .trends-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
-}
-
-.topic-card, .trend-post {
-    background: var(--bg-light);
-    border: 1px solid #eee;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.topic-card:hover, .trend-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-.topic-img, .trend-img {
-    height: 220px;
-    background: #ddd;
-    background-size: cover;
-    background-position: center;
-}
-
-.topic-body, .trend-info {
-    padding: 20px;
-}
-
-.topic-body h3, .trend-title {
-    font-family: 'Georgia', serif;
-    margin: 0 0 10px 0;
-}
-
-.trend-title { font-size: 20px; }
-
-.hot-tag {
-    background: var(--accent-red);
-    color: var(--bg-light);
-    font-size: 10px;
-    padding: 2px 6px;
-    text-transform: uppercase;
-    vertical-align: middle;
-    margin-left: 5px;
-    font-family: Arial, sans-serif;
-}
-
-.trend-cat {
-    font-size: 11px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-}
-
-.btn-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px;
-}
-
-/* Thanh nút chọn bộ lọc (Filter Tabs) */
-.filter-bar {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.filter-btn {
-    background: none;
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    margin: 5px;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.filter-btn.active, .filter-btn:hover {
-    background: var(--primary);
-    color: var(--bg-light);
-    border-color: var(--primary);
-}
-
-/* Trang Đăng Nhập Thành Viên */
-.login-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    background: var(--bg-cream);
-    min-height: 60vh;
-}
-
-.login-card {
-    background: var(--bg-light);
-    border: 1px solid var(--border-color);
-    padding: 40px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.login-card h2 {
-    font-family: 'Georgia', serif;
-    text-align: center;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
+/* Form & Comments */
+.login-container { display: flex; align-items: center; justify-content: center; padding: 60px 20px; background: var(--bg-cream); min-height: 50vh; }
+.login-card { background: #fff; border: 1px solid var(--border); padding: 40px; width: 100%; max-width: 400px; }
 .form-group { margin-bottom: 20px; }
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
+.form-group label { display: block; margin-bottom: 8px; font-size: 11px; text-transform: uppercase; font-weight: bold; }
+.form-group input, .comment-form input, .comment-form textarea { width: 100%; padding: 12px; border: 1px solid #ccc; box-sizing: border-box; }
+.btn-black { background: #000; color: #fff; border: none; padding: 12px 25px; text-transform: uppercase; font-size: 12px; font-weight: bold; cursor: pointer; width: 100%; }
+.comment-item { background: #f9f9f9; padding: 15px; border-left: 3px solid #000; margin-bottom: 15px; }
 
-.form-group input, .comment-form input, .comment-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 14px;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus, .comment-form input:focus, .comment-form textarea:focus {
-    border-color: var(--primary);
-    outline: none;
-}
-
-.btn-login {
-    width: 100%;
-    background: var(--primary);
-    color: var(--bg-light);
-    padding: 14px;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background 0.3s;
-}
-
-.btn-login:hover { background: var(--secondary); }
-.error-msg { color: var(--accent-red); font-size: 13px; margin-top: 5px; display: none; }
-
-/* Trang Nội Dung Chi Tiết Bài Viết & Đọc Giả Phản Hồi */
-.post-detail-container {
-    max-width: 800px;
-    margin: 40px auto;
-    background: var(--bg-light);
-    border: 1px solid #eee;
-    padding: 40px;
-}
-
-.post-header .cat {
-    text-transform: uppercase;
-    font-size: 12px;
-    color: var(--text-muted);
-    letter-spacing: 2px;
-}
-
-.post-title-detail {
-    font-family: 'Georgia', serif;
-    font-size: 32px;
-    margin: 10px 0 20px 0;
-    line-height: 1.4;
-}
-
-.post-body img {
-    width: 100%;
-    height: auto;
-    margin: 30px 0;
-}
-
-.related-box {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-}
-
-.comment-section {
-    margin-top: 50px;
-    border-top: 2px solid var(--primary);
-    padding-top: 30px;
-}
-
-.comment-list { margin-bottom: 30px; }
-.comment-item { background: #f9f9f9; padding: 15px; border-left: 3px solid var(--primary); margin-bottom: 15px; }
-.comment-item strong { font-size: 14px; display: block; margin-bottom: 5px; }
-.comment-form button {
-    background: var(--primary);
-    color: var(--bg-light);
-    border: none;
-    padding: 12px 25px;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Trang Sự Kiện Catwalk & Movies */
-.event-card { border: 1px solid #eee; margin-bottom: 50px; background: var(--bg-light); }
-.event-header { padding: 25px; }
-.event-header h2 { font-family: 'Georgia', serif; margin: 0 0 10px 0; font-size: 24px; }
-.event-meta { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.video-container { background: #000; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-.video-container video { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
-.event-footer { padding: 25px; font-size: 15px; line-height: 1.6; background: var(--bg-gray); }
-
-/* Chân trang (Sitemap Footer) */
-footer {
-    background: var(--primary);
-    color: var(--bg-light);
-    padding: 60px 0 30px 0;
-    font-size: 14px;
-    margin-top: 80px;
-}
-
-.sitemap {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 40px;
-}
-
-.sitemap h4 { font-family: 'Georgia', serif; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
-.sitemap ul { list-style: none; padding: 0; margin: 0; }
-.sitemap ul li { margin-bottom: 10px; }
-.sitemap ul li a { color: #aaa; text-decoration: none; transition: 0.3s; }
-.sitemap ul li a:hover { color: var(--bg-light); padding-left: 5px; }
-.copyright { text-align: center; margin-top: 30px; color: #666; font-size: 12px; }
+/* Footer */
+footer { background: #000; color: #fff; padding: 40px 0; font-size: 13px; margin-top: 60px; }
+.sitemap-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+.sitemap-grid ul { list-style: none; padding: 0; }
+.sitemap-grid a { color: #aaa; text-decoration: none; }
+.sitemap-grid a:hover { color: #fff; }
