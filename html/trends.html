@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xu Hướng Thời Trang 2026 - FASHION HUB</title>
+    <meta charset="UTF-8"><title>Xu Hướng Thời Trang - FASHION HUB</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="logo">FASHION HUB</div>
         <nav>
             <a href="index.html">Trang Chủ</a>
             <a href="trends.html" class="active">Xu Hướng</a>
             <a href="events.html">Sự Kiện</a>
-            <a href="login.html">Thành Viên</a>
+            <span id="member-nav"><a href="login.html">Thành Viên</a></span>
         </nav>
     </header>
 
     <div class="container">
-        <h1 class="page-title">Xu Hướng Thời Trang</h1>
+        <h1 class="section-title">Xu Hướng & Nguồn Cảm Hứng</h1>
         
-        <div class="filter-bar">
+        <div class="filter-bar" style="text-align:center; margin: 30px 0;">
             <button class="filter-btn active" onclick="filterCategory('all', this)">Tất cả</button>
-            <button class="filter-btn" onclick="filterCategory('classic', this)">Cổ điển</button>
-            <button class="filter-btn" onclick="filterCategory('modern', this)">Hiện đại</button>
+            <button class="filter-btn" onclick="filterCategory('paris', this)">Cảm hứng từ Paris Show</button>
         </div>
 
-        <div class="trends-grid">
-            <a href="detail.html" class="trend-post" data-cat="modern">
-                <div class="trend-img" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500');"></div>
-                <div class="trend-info">
-                    <span class="trend-cat">Hiện đại</span>
-                    <h3 class="trend-title">Sự Trỗi Dậy Của Phong Cách Minimalist Trong Năm 2026</h3>
-                    <p>Khám phá cách phối đồ tối giản nhưng mang tính ứng dụng cực cao...</p>
+        <div class="grid">
+            <div class="card trend-post" data-cat="paris">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400');"></div>
+                <div class="card-body">
+                    <h3>Phong cách Minimalist Đương Đại</h3>
+                    <p>Xu hướng được ra mắt tại chuỗi sự kiện Paris năm nay...</p>
+                    <a href="detail.html" class="cross-link-badge">Đọc bài chi tiết</a>
+                    <!-- LIÊN KẾT SANG SỰ KIỆN LIÊN QUAN -->
+                    <a href="events.html" class="cross-link-badge" style="background:#000; color:#fff;">Xem Show Paris diễn ra xu hướng này →</a>
                 </div>
-            </a>
-            <a href="detail.html" class="trend-post" data-cat="classic">
-                <div class="trend-img" style="background-image: url('https://images.unsplash.com/photo-1505022610485-0249ba5b3675?w=500');"></div>
-                <div class="trend-info">
-                    <span class="trend-cat">Cổ điển</span>
-                    <h3 class="trend-title">Retro Vintage: Khi giá trị cũ hồi sinh mạnh mẽ</h3>
-                    <p>Những mẫu thiết kế lấy cảm hứng từ thập niên 90 đang càn quét đường phố...</p>
-                </div>
-            </a>
+            </div>
+        </div>
+
+        <!-- VÙNG NỘI DUNG LIÊN KẾT THÀNH VIÊN (VIP LOCK) -->
+        <h2 class="section-title">Báo cáo Xu hướng Độc Quyền (VIP)</h2>
+        
+        <div id="vip-lock" class="lock-box">
+            <h3>Nội dung dành riêng cho Thành Viên</h3>
+            <p>Vui lòng đăng nhập tài khoản thành viên để mở khóa các phân tích chuyên sâu từ chuyên gia quốc tế.</p>
+            <a href="login.html" class="btn-go-login">Đăng nhập ngay</a>
+        </div>
+
+        <div id="vip-content" class="card" style="display:none; margin-bottom:5px;">
+            <div class="card-body" style="background: #fff8eb; border: 1px solid #f0dcb2;">
+                <h3 style="color: #bfa15f;">★ Dự đoán màu sắc chủ đạo Thu Đông 2026</h3>
+                <p>Chúc mừng thành viên! Bạn đã mở khóa thành công tài liệu: Sắc đỏ Burgundy và vàng mù tạt sẽ chiếm 70% các sàn diễn sắp tới...</p>
+            </div>
         </div>
     </div>
 
