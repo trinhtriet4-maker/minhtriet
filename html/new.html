@@ -3,69 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STREET CHIC - Thời Trang Cận Đại</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>ÉLAN - Tạp Chí Thời Trang & Xu Hướng</title>
+    <style>
+        /* Reset CSS & Fonts */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            background-color: #fcfcfc;
+            color: #111;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.3s;
+        }
+        a:hover {
+            opacity: 0.7;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Main Layout */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Featured Post (Hero) */
+        .featured-post {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        .featured-img img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .tag {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .featured-info h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .featured-info p {
+            font-family: 'Arial', sans-serif;
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* News Grid */
+        .section-title {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 1px;
+            background: #111;
+            margin: 10px auto 0;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .news-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            padding: 15px;
+        }
+        .card-img img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .card-info h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-top: 80px;
+        }
+
+        /* Responsive (Mobile) */
+        @media (max-width: 768px) {
+            .featured-post {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .featured-img img {
+                height: 300px;
+            }
+            .featured-info h2 {
+                font-size: 1.8rem;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="brand-logo">STREET<span>CHIC</span></div>
-        <nav class="nav-bar">
-            <ul class="menu-links">
-                <li><a href="index.html" class="active-link">Trang Chủ</a></li>
-                <li><a href="news.html">Tin Tức & Sự Kiện</a></li>
-                <li><a href="trends-beauty.html">Xu Hướng & Làm Đẹp</a></li>
-                <li><a href="login.html">Thành Viên</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-            </ul>
-        </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo"><a href="#">ÉLAN</a></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Xu hướng</a></li>
+                    <li><a href="#">Bộ sưu tập</a></li>
+                    <li><a href="#">Street Style</a></li>
+                    <li><a href="#">Làm đẹp</a></li>
+                    <li><a href="#">Video</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="banner-hero">
-        <div class="banner-box">
-            <span class="tag-hot">XU HƯỚNG MỚI</span>
-            <h1>Urban Edge Generation</h1>
-            <p>Bứt phá giới hạn với tuyên ngôn thời trang đường phố đương đại đầy cá tính.</p>
-            <a href="trends-beauty.html" class="action-btn">Xem Ngay</a>
-        </div>
-    </section>
-
-    <main class="grid-container">
-        <section class="topic-block">
-            <div class="block-header">
-                <h2>Nội dung tiêu điểm vừa cập nhật</h2>
+    <!-- Main Content -->
+    <main>
+        <!-- Bài viết nổi bật -->
+        <section class="featured-post">
+            <div class="featured-img">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Fashion Featured">
             </div>
-            <div class="cards-layout">
-                <article class="modern-card">
-                    <div class="img-zoom-holder">
-                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="Streetwear">
-                    </div>
-                    <div class="card-content">
-                        <span class="category-lbl">Sự Kiện</span>
-                        <h3><a href="news.html">Tuần lễ thời trang Seoul: Bản phối của tương lai</a></h3>
-                        <p>Nơi các tín đồ rầm rộ lăng xê những bộ trang phục mang hơi hướng futuristic phá cách.</p>
-                    </div>
-                </article>
-
-                <article class="modern-card">
-                    <div class="img-zoom-holder">
-                        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Makeup Edge">
-                    </div>
-                    <div class="card-content">
-                        <span class="category-lbl">Làm Đẹp</span>
-                        <h3><a href="trends-beauty.html">Trào lưu Y2K Makeup đang quay trở lại bùng nổ</a></h3>
-<p>Sự trỗi dậy của phấn mắt bắt sáng và son bóng cá tính làm xiêu lòng giới trẻ toàn cầu.</p>
-                    </div>
-                </article>
+            <div class="featured-info">
+                <span class="tag">Xu hướng Thu-Đông 2026</span>
+                <h2>Sự Trỗi Dậy Của Phong Cách "Quiet Luxury" Trong Kỷ Nguyên Mới</h2>
+                <p>Không còn những logo bản lớn hay màu sắc quá rực rỡ, xu hướng thời trang cuối năm 2026 hướng tới sự tinh tế tối giản, chất liệu cao cấp và những đường cắt may trường tồn với thời gian.</p>
+                <a href="#" style="font-family: Arial; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; border-bottom: 2px solid #111; padding-bottom: 5px;">Đọc bài viết</a>
             </div>
+        </section>
+
+        <h2 class="section-title">Tin tức mới nhất</h2>
+
+        <!-- Danh sách tin tức -->
+        <section class="news-grid">
+            <!-- Card 1 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80" alt="News 1">
+                </div>
+                <div class="card-info">
+                    <span class="tag">Tuần lễ thời trang</span>
+                    <h3><a href="#">Điểm lại những khoảnh khắc ấn tượng nhất tại Paris Fashion Week</a></h3>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=500&q=80" alt="News 2">
+                </div>
+                <div class="card-info">
+                    <span class="tag">Street Style</span>
+                    <h3><a href="#">Muôn kiểu phối đồ với boots cổ cao của giới trẻ Seoul</a></h3>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80" alt="News 3">
+                </div>
+                <div class="card-info">
+                    <span class="tag">Trang sức</span>
+                    <h3><a href="#">Phụ kiện metallic: Điểm nhấn không thể thiếu cho bữa tiệc cuối năm</a></h3>
+                </div>
+            </article>
         </section>
     </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2026 STREET CHIC Project. <a href="sitemap.html">Sơ đồ trang web</a></p>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ÉLAN MAGAZINE. ALL RIGHTS RESERVED.</p>
     </footer>
-    <script src="script.js"></script>
+
 </body>
 </html>
