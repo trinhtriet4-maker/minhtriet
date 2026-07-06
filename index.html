@@ -2,28 +2,215 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Trang Chủ - Thời Trang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Thời Trang & Làm Đẹp Toàn Cầu</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="news.html">Tin tức</a></li>
-                <li><a href="events.html">Sự kiện</a></li>
-                <li><a href="tips.html">Làm đẹp</a></li>
-                <li><a href="login.html">Đăng nhập</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Chào mừng đến với Fashion World</h1>
-        <div class="content-grid">
-            <div class="card">Tin hot 1</div>
-            <div class="card">Tin hot 2</div>
-            <div class="card">Tin hot 3</div>
+        <div class="container header-container">
+            <div class="logo">D-<span>SHOP</span></div>
+            <nav>
+                <ul class="menu">
+                    <li><a class="nav-link active" data-target="page-home">Trang Chủ</a></li>
+                    <li><a class="nav-link" data-target="page-news">Tin Tức & Sự Kiện</a></li>
+                    <li><a class="nav-link" data-target="page-trends">Xu Hướng & Làm Đẹp</a></li>
+                    <li><a class="nav-link" data-target="page-login"><i class="fa-regular fa-user"></i> Đăng Nhập</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+    <main class="container">
+
+        <section id="page-home" class="page-view" style="display: block;">
+            <div class="hero-slider" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/hero-banner.jpg') no-repeat center center/cover;">
+                <div class="hero-text">
+                    <h2>Thế Giới Thời Trang 2026</h2>
+                    <p>Cập nhật xu hướng thời thượng, tin tức sự kiện trong và ngoài nước</p>
+                </div>
+            </div>
+
+            <h3 class="section-title">Phân Vùng Chủ Đề</h3>
+            <div class="theme-zones">
+                <div class="zone-card nav-link" data-target="page-news">
+                    <i class="fa-solid fa-globe"></i>
+                    <h4>Thời Trang Quốc Tế</h4>
+                    <p>Tin tức nóng hổi từ các kinh đô Paris, Milan, New York...</p>
+                </div>
+                <div class="zone-card nav-link" data-target="page-news">
+                    <i class="fa-solid fa-star"></i>
+                    <h4>Sự Kiện Trong Nước</h4>
+                    <p>Toàn cảnh Tuần lễ thời trang Việt Nam và Phong cách Sao.</p>
+                </div>
+                <div class="zone-card nav-link" data-target="page-trends">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h4>Xu Hướng & Làm Đẹp</h4>
+                    <p>Bí quyết trang điểm, chăm sóc da và công thức phối đồ thịnh hành.</p>
+                </div>
+            </div>
+
+            <h3 class="section-title">Nội Dung Hot Vừa Cập Nhật</h3>
+            <div class="content-grid">
+                <article class="content-card btn-read-article" data-title="Xu hướng 'Quiet Luxury' thống trị sàn diễn quốc tế năm 2026" data-category="Xu Hướng Thời Trang" data-img="images/xu-huong-1.jpg">
+                    <div class="card-img" style="background-image: url('images/xu-huong-1.jpg');"></div>
+                    <div class="card-body">
+                        <span class="card-tag">Hot Update</span>
+                        <h4>Xu hướng 'Quiet Luxury' thống trị sàn diễn quốc tế năm 2026</h4>
+                        <p class="read-more">Đọc bài viết &gt;</p>
+                    </div>
+                </article>
+                <article class="content-card btn-read-article" data-title="Bí quyết đơn giản tối ưu chu trình Skincare cho mùa hè năng động" data-category="Làm Đẹp Toàn Diện" data-img="images/lam-dep-1.jpg">
+                    <div class="card-img" style="background-image: url('images/lam-dep-1.jpg');"></div>
+                    <div class="card-body">
+                        <span class="card-tag">Xem Nhiều Nhất</span>
+                        <h4>Bí quyết đơn giản tối ưu chu trình Skincare cho mùa hè năng động</h4>
+                        <p class="read-more">Đọc bài viết &gt;</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="page-news" class="page-view">
+            <div class="page-header">
+                <h2>Tin Tức & Sự Kiện Thời Trang</h2>
+                <p>Tổng hợp thông tin sự kiện thời trang tiêu điểm trong nước và quốc tế.</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card btn-read-article" data-title="Khai mạc Tuần lễ Thời trang Toàn quốc tại TP. Hồ Chí Minh" data-category="Sự Kiện Trong Nước" data-img="images/tin-tuc-1.jpg">
+                    <div class="card-img" style="background-image: url('images/tin-tuc-1.jpg');"></div>
+                    <div class="card-body">
+                        <span class="card-tag">Tin Trong Nước</span>
+                        <h4>Khai mạc Tuần lễ Thời trang Toàn quốc tại TP. Hồ Chí Minh</h4>
+                        <p class="read-more">Đọc bài viết &gt;</p>
+                    </div>
+                </div>
+                <div class="content-card btn-read-article" data-title="Sự trỗi dậy của các nhà thiết kế Châu Á tại Paris Fashion Week" data-category="Tin Tức Quốc Tế" data-img="images/tin-tuc-2.jpg">
+                    <div class="card-img" style="background-image: url('images/tin-tuc-2.jpg');"></div>
+                    <div class="card-body">
+                        <span class="card-tag">Tin Quốc Tế</span>
+                        <h4>Sự trỗi dậy của các nhà thiết kế Châu Á tại Paris Fashion Week</h4>
+                        <p class="read-more">Đọc bài viết &gt;</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-trends" class="page-view">
+            <div class="page-header">
+                <h2>Xu Hướng & Bí Quyết Làm Đẹp</h2>
+                <p>Nơi chia sẻ các phong cách phối đồ dẫn đầu xu hướng và phương pháp chăm sóc sắc đẹp khoa học.</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card btn-read-article" data-title="Phong cách tối giản lên ngôi: Khi sự đơn giản tạo nên đẳng cấp" data-category="Xu Hướng" data-img="images/xu-huong-2.jpg">
+                    <div class="card-img" style="background-image: url('images/xu-huong-2.jpg');"></div>
+                    <div class="card-body">
+                        <span class="card-tag">Xu Hướng 2026</span>
+                        <h4>Phong cách tối giản lên ngôi: Khi sự đơn giản tạo nên đẳng cấp</h4>
+                        <p class="read-more">Đọc bài viết &gt;</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-detail" class="page-view">
+            <div class="detail-container">
+                <span id="detail-category" class="detail-badge">Chủ đề</span>
+                <h1 id="detail-title">Tiêu đề bài viết chi tiết</h1>
+                
+                <div id="detail-image" class="detail-main-img"></div>
+                
+                <div class="detail-text">
+                    <p>Thời trang là tấm gương phản chiếu hơi thở của thời đại. Mỗi một mùa mốt đi qua đều để lại những dấu ấn đậm nét về sự sáng tạo không ngừng nghỉ của các nhà thiết kế gạo cội trong và ngoài nước. Bài trình bày này nhằm mục đích mang lại cái nhìn toàn cảnh sâu sắc nhất về chủ đề này đến quý độc giả độc quyền.</p>
+                    <p>Theo nguồn tin tham khảo uy tín từ hệ thống đối tác <em>thoitrangdshop.vn</em>, việc lựa chọn màu sắc trang nhã, kết cấu chất liệu thân thiện với môi trường kết hợp linh hoạt với các phụ kiện tối giản đang là kim chỉ nam cho lối sống hiện đại hiện nay.</p>
+                </div>
+
+                <div class="related-box">
+                    <h4><i class="fa-solid fa-paperclip"></i> Nội dung liên quan bạn có thể thích:</h4>
+                    <div class="related-links">
+                        <a href="#" class="nav-link" data-target="page-trends">&gt; Xem các xu hướng trang phục thiết kế thịnh hành năm nay</a>
+                        <a href="#" class="nav-link" data-target="page-news">&gt; Cập nhật lịch trình các Tuần lễ Thời trang lớn sắp diễn ra</a>
+                    </div>
+                </div>
+
+                <div class="comment-wrapper">
+                    <h3><i class="fa-regular fa-comments"></i> Phản hồi & Ý kiến bạn đọc</h3>
+                    
+                    <form id="comment-form">
+                        <div class="form-row">
+                            <input type="text" id="cmt-user" placeholder="Tên của bạn..." required>
+                        </div>
+                        <div class="form-row">
+                            <textarea id="cmt-msg" placeholder="Viết bình luận, ý kiến phản hồi của bạn về bài trình bày này..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Gửi ý kiến phản hồi</button>
+                    </form>
+
+                    <div id="comment-list" class="comment-list">
+                        <div class="comment-item">
+                            <div class="comment-meta">
+                                <span class="comment-name">Hoàng Yến</span>
+                                <span class="comment-date">• 10 phút trước</span>
+                            </div>
+                            <p class="comment-content">Bài trình bày phân tích rất hay và đúng trọng tâm xu hướng hiện nay. Bố cục hình ảnh phối hợp vô cùng trang nhã!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-login" class="page-view">
+            <div class="login-box">
+                <h3>Đăng Nhập Thành Viên</h3>
+                <p style="font-size: 13px; color: #777; text-align: center; margin-bottom: 20px;">Đăng nhập để nhận các bản tin xu hướng sớm nhất</p>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label>Tài khoản (Email)</label>
+                        <input type="text" id="login-email" placeholder="example@gmail.com">
+                        <span class="error-text" id="error-email">Vui lòng điền đúng định dạng Email!</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <input type="password" id="login-password" placeholder="••••••••">
+                        <span class="error-text" id="error-password">Mật khẩu phải chứa ít nhất 6 ký tự!</span>
+                    </div>
+                    <button type="submit" class="btn-login">Đăng Nhập</button>
+                </form>
+            </div>
+        </section>
+
     </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h4>D-SHOP FASHION MAGAZINE</h4>
+                <p>Hệ thống cung cấp thông tin toàn diện về lĩnh vực thời trang, sự kiện và làm đẹp trong và ngoài nước.</p>
+                <p style="font-size: 12px; margin-top: 10px; color: #888;">Nguồn tham khảo nội dung: thoitrangdshop.vn</p>
+            </div>
+            
+            <div class="footer-sitemap">
+                <h4>Sitemap (Sơ đồ trang)</h4>
+                <ul class="sitemap-links">
+                    <li><a href="#" class="nav-link" data-target="page-home"><i class="fa-solid fa-angle-right"></i> Trang Chủ chính</a></li>
+                    <li><a href="#" class="nav-link" data-target="page-news"><i class="fa-solid fa-angle-right"></i> Tin Tức & Sự Kiện quốc tế/trong nước</a></li>
+                    <li><a href="#" class="nav-link" data-target="page-trends"><i class="fa-solid fa-angle-right"></i> Xu Hướng thời trang & Làm đẹp</a></li>
+                    <li><a href="#" class="nav-link" data-target="page-login"><i class="fa-solid fa-angle-right"></i> Đăng Nhập thành viên</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 D-Shop Project. Định dạng trang nhã - Bố cục hợp lý phù hợp tiêu chuẩn.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
