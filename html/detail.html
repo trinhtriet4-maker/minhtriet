@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8"><title>Bài Viết Chi Tiết - FASHION HUB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góc Nhìn Chuyên Sâu | FASHION HUB</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <div class="logo">FASHION HUB</div>
         <nav>
@@ -15,40 +18,45 @@
         </nav>
     </header>
 
-    <div class="container" style="max-width:800px; margin-top:40px;">
-        <span style="color:var(--text-muted); text-transform:uppercase; font-size:11px;">Xu Hướng / Phân tích</span>
-        <h1 style="font-family:'Georgia',serif; margin:10px 0;">Sự Trỗi Dậy Của Phong Cách Minimalist Trong Năm 2026</h1>
-        
-        <p>Phong cách tối giản lên ngôi mạnh mẽ dựa trên sự dịch chuyển ý thức người tiêu dùng sang thời trang bền vững...</p>
-        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800" style="width:100%;" alt="Fashion">
+    <main class="detail-main-wrapper">
+        <article class="detail-header">
+            <span class="cat-tag">Xu Hướng / Phân tích dòng chảy</span>
+            <h1 class="detail-title">Sự Trỗi Dậy Của Phong Cách Minimalist Trong Năm 2026</h1>
+            <p style="color:#666; font-size:13px; margin-bottom:30px;">Tác giả: <b>Khánh Linh (Fashion Stylist)</b> | Xuất bản: Mùa Hè 2026</p>
+            
+            <div class="detail-body-text">
+                <p>Thời trang thế giới năm 2026 chứng kiến một bước chuyển mình lịch sử. Sự sang trọng không còn nằm ở những logo bản lớn hay chi tiết đính kết rườm rà, mà được định nghĩa lại bằng các đường cắt may dứt khoát, chất liệu tự nhiên bền vững và phom dáng tối giản ứng dụng cao.</p>
+                <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800" alt="Minimalist Luxury Style">
+                <p>Các dải màu được ưa chuộng dịch chuyển hoàn toàn sang gam màu lặng (muted tones) như màu beige cát, xám khói bụi, và xanh olive trầm. Đây chính là những chất liệu cốt lõi giúp người mặc xây dựng một tủ đồ capsule không bao giờ lỗi mốt.</p>
+            </div>
+        </article>
 
-        <!-- Các links nội dung liên quan chặt chẽ -->
-        <div style="margin-top:40px; padding:20px; border: 1px solid var(--border); background:#fafafa;">
-            <h4>Chủ đề liên quan vừa cập nhật:</h4>
-            <ul>
-                <li>Xem bộ sưu tập thực tế tại: <a href="events.html" style="color:#000;">Sự kiện Paris Haute Couture Week 2026</a></li>
-                <li>Xem báo cáo nâng cao: <a href="trends.html" style="color:#000;">Dự báo xu hướng màu sắc VIP</a></li>
+        <div style="background:var(--bg-cream); padding:25px; border:1px solid var(--border-color); margin:40px 0;">
+            <h4 style="font-family:'Georgia', serif; text-transform:uppercase; margin-bottom:12px;">Liên kết nội dung liên quan:</h4>
+            <ul style="list-style-type: square; padding-left:20px; font-size:14px;">
+                <li style="margin-bottom:8px;">Chiêm ngưỡng bộ sưu tập thực tế tại: <a href="events.html" style="color:#000; font-weight:bold;">Video Sự kiện Paris Runway Week 2026</a></li>
+                <li style="margin-bottom:4px;">Đối với thành viên cao cấp: <a href="trends.html" style="color:#000; font-weight:bold;">Xem báo cáo mật về màu sắc xu hướng VIP</a></li>
             </ul>
         </div>
 
-        <!-- Khu vực bình luận -->
-        <div class="comment-section">
-            <h3>Ý kiến phản hồi (<span id="count">1</span>)</h3>
-            <div id="boxComments" class="comment-list">
+        <section class="comment-section">
+            <h3 style="font-family:'Georgia', serif; font-size:20px; margin-bottom:20px;">Ý kiến độc giả (<span id="count">1</span>)</h3>
+            
+            <div class="comment-list" id="boxComments">
                 <div class="comment-item">
-                    <strong>Minh Tú (Stylist)</strong>
-                    <p>Bài phân tích rất sâu sắc, phong cách tối giản ứng dụng cực tốt cho mùa mốt 2026!</p>
+                    <strong>Minh Đăng (Hà Nội)</strong>
+                    <p>Bài viết phân tích rất chuẩn xác xu hướng thiết kế năm nay, phom dáng tối giản giúp tôn dáng người mặc cực tốt!</p>
                 </div>
             </div>
 
-            <div class="comment-form" style="margin-top:30px;">
-                <h4>Để lại ý kiến phản hồi của bạn</h4>
-                <input type="text" id="cmtName" placeholder="Tên của bạn" style="margin-bottom:10px;"><br>
-                <textarea id="cmtContent" rows="4" placeholder="Nhập nội dung ý kiến đóng góp..."></textarea><br>
-                <button class="btn-black" onclick="postComment()" style="width:auto; margin-top:10px;">Gửi phản hồi</button>
+            <div class="comment-form">
+                <h4 style="font-family:'Georgia', serif; margin-bottom:15px; text-transform:uppercase; font-size:14px;">Gửi phản hồi của bạn</h4>
+                <input type="text" id="cmtName" placeholder="Tên hoặc Biệt danh của bạn" required>
+                <textarea id="cmtContent" rows="4" placeholder="Nhập nội dung ý kiến đóng góp ý kiến phản hồi tại đây..." required></textarea>
+                <button type="button" class="btn-submit-black" onclick="postComment()" style="width:auto; padding:12px 30px;">Gửi ý kiến</button>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <script src="main.js"></script>
 </body>
