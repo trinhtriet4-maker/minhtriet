@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8"><title>Sự Kiện Sàn Diễn - FASHION HUB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự Kiện & Sàn Diễn Toàn Cầu | FASHION HUB</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <div class="logo">FASHION HUB</div>
         <nav>
@@ -15,29 +18,30 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h1 class="section-title">Sàn Diễn & Phim Sự Kiện</h1>
-        
-        <div class="event-card" style="border: 1px solid var(--border); margin-top:30px;">
-            <div class="event-header" style="padding:20px;">
-                <span class="event-meta" style="color:var(--text-muted); font-size:12px;">SỰ KIỆN QUỐC TẾ</span>
-                <h2>Paris Haute Couture Fashion Week 2026</h2>
+    <main class="container">
+        <h1 class="page-title">Sàn Diễn & Phim Sự Kiện</h1>
+
+        <div class="event-block">
+            <div class="event-block-header">
+                <span style="font-size:11px; text-transform:uppercase; color:var(--vip-gold); font-weight:bold; letter-spacing:1px;">Runway Cinema 2026</span>
+                <h2>Paris Haute Couture Fashion Week Live-Movie</h2>
             </div>
             
-            <div class="video-container">
-                <video controls poster="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1000">
+            <div class="video-player-container">
+                <video controls poster="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200">
                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ công nghệ phát video này.
                 </video>
             </div>
 
-            <div class="event-footer" style="padding:20px;">
-                <p>Sự kiện bùng nổ với hàng loạt thiết kế ứng dụng phom dáng tối giản hiện đại.</p>
-                <!-- LIÊN KẾT NGƯỢC LẠI XU HƯỚNG -->
-                <a href="trends.html" class="cross-link-badge" style="background:#000; color:#fff;">← Tìm hiểu Xu Hướng Tối Giản tạo nên Show diễn này</a>
-                <a href="detail.html" class="cross-link-badge">Xem Bình luận phản hồi của giới điệu mộ</a>
+            <div class="event-block-footer">
+                <p style="margin-bottom:20px; font-size:15px;">Thước phim toàn cảnh ghi lại những thiết kế mang tính biểu tượng nhất, quy tụ giới chuyên môn và các ngôi sao toàn cầu. Toàn bộ phom dáng trang phục trong sự kiện này chính là tiền đề tạo nên làn sóng tối giản hiện tại.</p>
+                
+                <a href="trends.html" class="cross-link-btn" style="background:#000; color:#fff;">← Xem Phân tích Xu hướng tạo nên show diễn này</a>
+                <a href="detail.html" class="cross-link-btn">Xem đánh giá & gửi bình luận phản hồi</a>
             </div>
         </div>
-    </div>
+    </main>
 
     <script src="main.js"></script>
 </body>
