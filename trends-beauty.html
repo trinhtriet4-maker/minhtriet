@@ -3,80 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STREET CHIC - Xu Hướng & Làm Đẹp</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>ÉLAN BEAUTY - Xu Hướng Làm Đẹp & Chăm Sóc Da Cao Cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Hệ thống tinh chỉnh cốt lõi */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-beauty: #fdfaf7;
+            --text-color: #2c2520;
+            --text-muted: #6e645e;
+            --accent-pink: #e8c5b0;
+            --accent-dark: #b88464;
+            --border-color: #f0e6df;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Montserrat', Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-beauty);
+            color: var(--text-color);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-dark);
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* Thanh điều hướng Chuyên trang Beauty */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo-beauty {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            letter-spacing: 5px;
+            font-weight: 500;
+        }
+
+        .logo-beauty span {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: var(--accent-dark);
+            display: block;
+            text-align: center;
+            margin-top: -5px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        /* Khu vực bài viết Tiêu điểm (Hero Spotlight) */
+        .beauty-hero {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-image-box {
+            position: relative;
+            overflow: hidden;
+            height: 550px;
+            box-shadow: 20px 20px 0px var(--accent-pink);
+        }
+
+        .hero-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .hero-image-box:hover img {
+            transform: scale(1.04);
+        }
+
+        .hero-text-box span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-dark);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .hero-text-box h1 {
+            font-family: var(--font-serif);
+            font-size: 38px;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-text-box p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .btn-link {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--text-color);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Phân tách tiêu đề phân khu */
+        .beauty-section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .beauty-section-title h2 {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .beauty-section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 1px;
+            background-color: var(--accent-dark);
+        }
+
+        /* Lưới bài viết Xu hướng (Trends Grid) */
+        .trends-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-bottom: 80px;
+        }
+
+        .trend-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .trend-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(184, 132, 100, 0.05);
+        }
+
+        .card-img-wrap {
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .trend-card h3 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .trend-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        /* Chuyên mục Editor's Choice */
+        .editors-choice {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .product-focus-img {
+            height: 400px;
+        }
+
+        .product-focus-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .choice-details h4 {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--accent-dark);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .choice-details h3 {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .choice-details ul {
+            list-style-type: none;
+            margin-bottom: 25px;
+        }
+
+        .choice-details ul li {
+            font-size: 14px;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .choice-details ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--accent-dark);
+        }
+
+        /* Chân trang */
+        footer {
+            background-color: #2c2520;
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Thiết kế tương thích (Responsive) */
+        @media (max-width: 968px) {
+            .beauty-hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-image-box {
+                height: 400px;
+                box-shadow: 12px 12px 0px var(--accent-pink);
+            }
+            .trends-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .editors-choice {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .product-focus-img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .trends-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-wrap {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="brand-logo">STREET<span>CHIC</span></div>
-        <nav class="nav-bar">
-            <ul class="menu-links">
-                <li><a href="index.html">Trang Chủ</a></li>
-                <li><a href="news.html">Tin Tức & Sự Kiện</a></li>
-                <li><a href="trends-beauty.html" class="active-link">Xu Hướng & Làm Đẹp</a></li>
-                <li><a href="login.html">Thành Viên</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-            </ul>
-        </nav>
+
+    <!-- Header & Menu nội bộ đồng bộ .html -->
+    <header>
+        <div class="container header-wrap">
+            <div class="logo-beauty">
+                <a href="index.html">ÉLAN</a>
+                <span>BEAUTY</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="shop.html">Cửa hàng</a></li>
+                    <li><a href="new.html">Tạp chí</a></li>
+                    <li><a href="#">Xu hướng 2026</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="grid-container">
-        <section class="topic-block">
-            <div class="block-header">
-                <h2>Cẩm Nang Xu Hướng Đương Đại</h2>
-            </div>
-            <div class="cards-layout">
-                <article class="modern-card">
-                    <div class="img-zoom-holder">
-                        <!-- Nhúng Iframe Youtube ổn định xem được 100% -->
-                        <iframe width="100%" height="340" src="https://www.youtube.com/embed/LN97C6VwS9o?autoplay=1&mute=1&loop=1&playlist=LN97C6VwS9o" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="card-content">
-                        <span class="category-lbl">Thước Phim</span>
-                        <h3>Cận cảnh Runway phối đồ Streetwear bụi bặm</h3>
-                        <p>Học hỏi cách phối các lớp layer quần áo oversize cực đỉnh qua video tổng hợp sàn diễn.</p>
-                    </div>
-                </article>
+    <!-- Khung nội dung chính -->
+    <main class="container">
 
-                <article class="modern-card">
-                    <div class="img-zoom-holder">
-                        <img src="https://images.unsplash.com/photo-1505022610485-0249ba5b3675?auto=format&fit=crop&w=600&q=80" alt="Trend Wardrobe">
-                    </div>
-                    <div class="card-content">
-                        <span class="category-lbl">Xu Hướng Cá Tính</span>
-                        <h3>Sự lên ngôi của phong cách túi đa năng Cargo Bags</h3>
-                        <p>Tiện lợi, mạnh mẽ và gai góc là những gì chiếc túi này mang lại cho set đồ của bạn.</p>
-                    </div>
-                </article>
+        <!-- Bài viết tiêu điểm lớn thu hút thị giác -->
+        <section class="beauty-hero">
+            <div class="hero-image-box">
+                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80" alt="Skinimalism Trend">
+            </div>
+            <div class="hero-text-box">
+                <span>Xu Hướng Tiêu Điểm 2026</span>
+                <h1>Định Nghĩa Lại Làn Da Khỏe Mạnh Từ Triết Lý Tối Giản "Skinimalism"</h1>
+                <p>Năm 2026 đánh dấu bước thoái trào của chu trình dưỡng da 10 bước phức tạp. Giới mộ điệu và các chuyên gia da liễu toàn cầu đang đồng loạt hướng sự chú ý về "Skinimalism" — giải pháp tập trung vào các hoạt chất đa năng tinh khiết giúp bảo vệ tối đa hàng rào sinh học tự nhiên của biểu bì. Làn da đẹp nhất là làn da nguyên bản, căng bóng mọng nước và thở nhịp nhàng cùng thiên nhiên.</p>
+                <a href="#" class="btn-link">Đọc bài luận</a>
             </div>
         </section>
 
-        <section class="interaction-block">
-            <h3>Chủ đề liên quan liên kết</h3>
-            <div class="links-co-relation">
-                <a href="news.html">➔ Đọc tin tức về sự kiện Sneakerhead phối hợp cùng túi Cargo</a>
-</div>
+        <div class="beauty-section-title">
+            <h2>Báo Cáo Xu Hướng Mùa Này</h2>
+        </div>
 
-            <h2 class="block-title">Phản hồi bạn đọc</h2>
-            <div id="comment-list" class="feedback-container">
-                <div class="feedback-item">
-                    <h5>Minh Quân</h5>
-                    <p>Video phối đồ bánh cuốn quá, quả túi cargo phối với hoodie nhìn chất chơi thực sự.</p>
+        <!-- Lưới bài viết Xu hướng 3 cột -->
+        <section class="trends-grid">
+            
+            <article class="trend-card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80" alt="Cloud Skin">
                 </div>
-            </div>
+                <h3>Sự trỗi dậy của hiệu ứng nền "Cloud Skin" mờ sương</h3>
+                <p>Không quá bóng dầu như Glass Skin, Cloud Skin mang lại lớp finish mịn lì mỏng nhẹ tựa những đám mây, tập trung bắt sáng tự nhiên ở các vùng gò má.</p>
+                <a href="#" class="btn-link">Khám phá</a>
+            </article>
 
-            <form id="comment-form" class="modern-form">
-                <div class="input-box"><input type="text" id="comment-name" required placeholder="Tên của bạn"></div>
-                <div class="input-box"><textarea id="comment-content" rows="3" required placeholder="Nhập ý kiến bình luận phản hồi..."></textarea></div>
-                <button type="submit" class="submit-btn">Gửi bài</button>
-            </form>
+            <article class="trend-card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80" alt="Monochromatic Makeup">
+                </div>
+                <h3>Lối trang điểm đơn sắc Tone Hồng Khô lãng mạn</h3>
+                <p>Sự đồng điệu giữa màu mắt, má hồng và đôi môi với sắc hồng đất ấm áp mang lại diện mạo thanh lịch, đầy chất thơ cho những buổi chiều thu muộn.</p>
+                <a href="#" class="btn-link">Khám phá</a>
+            </article>
+
+            <article class="trend-card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1608248597481-496100c8c836?auto=format&fit=crop&w=600&q=80" alt="Aromatherapy">
+                </div>
+                <h3>Liệu pháp mùi hương sinh học định hình cảm xúc</h3>
+                <p>Nước hoa năm nay không chỉ để thơm, mà là sự lên ngôi của các phân tử hương chiết xuất rễ cây, gỗ thiêng hỗ trợ cân bằng trạng thái tinh thần.</p>
+                <a href="#" class="btn-link">Khám phá</a>
+            </article>
+
         </section>
+
+        <div class="beauty-section-title">
+            <h2>Editor's Choice</h2>
+        </div>
+
+        <!-- Tiêu điểm sản phẩm nổi bật của năm -->
+        <section class="editors-choice">
+            <div class="product-focus-img">
+                <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=600&q=80" alt="Product Choice">
+            </div>
+            <div class="choice-details">
+                <h4>Sản Phẩm Đột Phá Năm</h4>
+                <h3>Tinh Chất Phục Hồi Thần Tốc ÉLAN Botanical Serum</h3>
+                <p>Được bình chọn bởi 15 biên tập viên làm đẹp kỳ cựu trên toàn hệ thống, dòng serum chứa phức hợp Peptides sinh học và chiết xuất trà trắng nguyên bản mang lại sự cải thiện rõ rệt chỉ sau 7 đêm trải nghiệm.</p>
+                <ul>
+                    <li>Tái tạo kết cấu tế bào bọc nước sâu.</li>
+                    <li>Làm dịu tức thì các kích ứng mẩn đỏ do thời tiết.</li>
+                    <li>Thành phần 100% thuần chay, không cồn sinh học và hương liệu nhân tạo.</li>
+                </ul>
+                <a href="#" class="btn-link">Xem đánh giá chi tiết</a>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2026 STREET CHIC Project.</p>
+    <footer>
+        <p>&copy; 2026 ÉLAN BEAUTY. NƠI VẺ ĐẸP KHỞI NGUỒN TỪ SỰ TINH KHIẾT.</p>
     </footer>
-    <script src="script.js"></script>
+
 </body>
 </html>
