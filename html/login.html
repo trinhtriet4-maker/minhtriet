@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập Thành Viên - FASHION HUB</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; background: #f4f1ea; display: flex; flex-direction: column; min-height: 100vh; }
+        header { border-bottom: 1px solid #e0e0e0; padding: 20px 0; text-align: center; background: #fff;}
+        .logo { font-family: 'Georgia', serif; font-size: 35px; letter-spacing: 5px; font-weight: bold; margin-bottom: 10px; }
+        nav a { text-decoration: none; color: #000; margin: 0 20px; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        
+        .login-container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+        .login-card { background: #fff; border: 1px solid #ddd; padding: 40px; width: 100%; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .login-card h2 { font-family: 'Georgia', serif; text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; box-sizing: border-box; font-size: 14px; transition: 0.3s; }
+        .form-group input:focus { border-color: #000; outline: none; }
+        
+        .btn-login { width: 100%; background: #000; color: #fff; padding: 14px; border: none; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .btn-login:hover { background: #333; }
+        .error-msg { color: #ff3b30; font-size: 13px; margin-top: 5px; display: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">FASHION HUB</div>
+        <nav>
+            <a href="index.html">Trang Chủ</a>
+            <a href="trends.html">Xu Hướng</a>
+            <a href="events.html">Sự Kiện</a>
+            <a href="login.html" style="color: #777;">Thành Viên</a>
+        </nav>
+    </header>
+
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Đăng Nhập</h2>
+            <form id="loginForm" onsubmit="validateLogin(event)">
+                <div class="form-group">
+                    <label for="email">Email thành viên</label>
+                    <input type="email" id="email" placeholder="example@fashion.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" placeholder="••••••••">
+                    <div class="error-msg" id="errorMsg">Vui lòng điền đầy đủ thông tin!</div>
+                </div>
+                <button type="submit" class="btn-login">Vào hệ thống</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin(e) {
+            e.preventDefault();
+            var email = document.getElementById('email').value.trim();
+            var pass = document.getElementById('password').value.trim();
+            var errorMsg = document.getElementById('errorMsg');
+
+            if(email === "" || pass === "") {
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Tài khoản hoặc mật khẩu không được để trống!";
+            } else {
+                errorMsg.style.display = "none";
+                alert("Đăng nhập thành công với tài khoản: " + email);
+                window.location.href = "index.html"; // Chuyển về trang chủ sau khi đăng nhập thành công
+            }
+        }
+    </script>
+</body>
+</html>
