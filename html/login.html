@@ -3,46 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cổng Thành Viên Đăng Nhập | FASHION HUB</title>
+    <title>STREET CHIC - Đăng Nhập</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <div class="logo">FASHION HUB</div>
-        <nav>
-            <a href="index.html">Trang Chủ</a>
-            <a href="trends.html">Xu Hướng</a>
-            <a href="events.html">Sự Kiện</a>
-            <span id="member-nav"><a href="login.html" class="active">Thành Viên</a></span>
+    <header class="main-header">
+        <div class="brand-logo">STREET<span>CHIC</span></div>
+        <nav class="nav-bar">
+            <ul class="menu-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="news.html">Tin Tức & Sự Kiện</a></li>
+                <li><a href="trends-beauty.html">Xu Hướng & Làm Đẹp</a></li>
+                <li><a href="login.html" class="active-link">Thành Viên</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
         </nav>
     </header>
 
-    <div class="login-wrapper">
-        <div class="login-form-box">
-            <h2 style="font-family:'Georgia', serif; text-align:center; text-transform:uppercase; letter-spacing:1px; margin-bottom:5px;">Đăng Nhập</h2>
-            <p style="text-align:center; font-size:12px; color:var(--text-muted); margin-bottom:25px;">Không gian dành riêng cho giới mộ điệu</p>
-            
-            <form id="loginForm" onsubmit="validateLogin(event)">
-                <div class="form-field">
-                    <label for="email">Tài khoản Email</label>
-                    <input type="email" id="email" placeholder="yourname@example.com" required autocomplete="username">
+    <main class="container-center">
+        <div class="auth-card">
+            <h2>MEMBER PORTAL</h2>
+            <p class="auth-sub">Đăng nhập để nhận các bản tin xu hướng sớm nhất</p>
+            <form id="auth-form" class="modern-form">
+                <div class="input-box">
+                    <input type="email" id="auth-email" required placeholder="Địa chỉ Email">
                 </div>
-                
-                <div class="form-field">
-                    <label for="password">Mật khẩu</label>
-                    <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
-                    <div id="errorMsg" style="color:var(--accent-red); font-size:12px; margin-top:5px; display:none;"></div>
+                <div class="input-box">
+                    <input type="password" id="auth-password" required placeholder="Mật khẩu bí mật">
                 </div>
-                
-                <button type="submit" class="btn-submit-black" style="width: 100%;">Xác nhận đăng nhập</button>
+                <button type="submit" class="submit-btn" style="width:100%;">Vào Hệ Thống</button>
             </form>
-            <p style="font-size:11px; text-align:center; margin-top:20px; color:var(--text-muted); line-height:1.4;">
-                * Đăng nhập thành công sẽ mở khóa vùng nội dung ẩn VIP tại chuyên trang xu hướng.
-            </p>
+            <div class="back-link-box">
+                <a href="index.html">← Quay lại trang chủ đọc tin</a>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <script src="main.js"></script>
+    <footer class="main-footer" style="position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2026 STREET CHIC Project.</p>
+    </footer>
+
+    <script>
+        document.getElementById('auth-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Đăng nhập client-side thành công!');
+            window.location.href = "index.html";
+        });
+    </script>
 </body>
 </html>
