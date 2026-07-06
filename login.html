@@ -1,55 +1,83 @@
 <!DOCTYPE html>
+
 <html lang="vi">
+
 <head>
+
+<header>
+
+    <div class="logo">
+
+        <a href="index.html"><img src="images/logo.png" alt="Fashion World"></a>
+
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="index.html">Trang chủ</a></li>
+
+            <li><a href="category.html">Xu hướng</a></li>
+
+            <li><a href="login.html">Đăng nhập</a></li>
+
+            <li><a href="sitemap.html">Sitemap</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<footer>
+
+    <div class="container">
+
+        <p>&copy; 2023 FASHION WORLD - Cẩm nang thời trang</p>
+
+        <p>Liên hệ: contact@fashionworld.vn | Hotline: 1800 xxxx</p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="js/main.js"></script>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STREET CHIC - Đăng Nhập</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+    <title>Đăng nhập thành viên - Fashion World</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
-    <header class="main-header">
-        <div class="brand-logo">STREET<span>CHIC</span></div>
-        <nav class="nav-bar">
-            <ul class="menu-links">
-                <li><a href="index.html">Trang Chủ</a></li>
-                <li><a href="news.html">Tin Tức & Sự Kiện</a></li>
-                <li><a href="trends-beauty.html">Xu Hướng & Làm Đẹp</a></li>
-                <li><a href="login.html" class="active-link">Thành Viên</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main class="container-center">
-        <div class="auth-card">
-            <h2>MEMBER PORTAL</h2>
-            <p class="auth-sub">Đăng nhập để nhận các bản tin xu hướng sớm nhất</p>
-            <form id="auth-form" class="modern-form">
-                <div class="input-box">
-                    <input type="email" id="auth-email" required placeholder="Địa chỉ Email">
-                </div>
-                <div class="input-box">
-                    <input type="password" id="auth-password" required placeholder="Mật khẩu bí mật">
-                </div>
-                <button type="submit" class="submit-btn" style="width:100%;">Vào Hệ Thống</button>
-            </form>
-            <div class="back-link-box">
-                <a href="index.html">← Quay lại trang chủ đọc tin</a>
+    <main class="container">
+
+        <div class="login-form">
+
+            <h2>Đăng nhập</h2>
+
+            <div class="form-group">
+
+                <label for="email">Email:</label>
+
+                <input type="email" id="email" placeholder="Nhập email...">
+
             </div>
-        </div>
-    </main>
 
-    <footer class="main-footer" style="position: fixed; bottom: 0; width: 100%;">
-        <p>&copy; 2026 STREET CHIC Project.</p>
-    </footer>
+            <div class="form-group">
 
-    <script>
-        document.getElementById('auth-form')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Đăng nhập client-side thành công!');
-            window.location.href = "index.html";
-        });
-    </script>
-</body>
-</html>
+                <label for="password">Mật khẩu:</label>
+
+                <input type="password" id="password" placeholder="Nhập mật khẩu...">
+
+            </div>
