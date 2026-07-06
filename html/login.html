@@ -3,30 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cổng Thành Viên | FASHION HUB</title>
+    <title>Cổng Thành Viên Đăng Nhập | FASHION HUB</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .login-util-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            margin-top: -10px;
-            margin-bottom: 20px;
-        }
-        .login-util-flex a { color: #666; text-decoration: none; }
-        .login-util-flex a:hover { color: #000; text-decoration: underline; }
-        .oauth-divider {
-            margin-top: 25px;
-            border-top: 1px dashed var(--border-color);
-            padding-top: 20px;
-            text-align: center;
-        }
-        .oauth-divider p { font-size: 11px; text-transform: uppercase; color: #777; letter-spacing: 1px; margin-bottom: 15px; }
-        .oauth-btns-group { display: flex; gap: 10px; }
-        .btn-oauth-provider { flex: 1; padding: 11px; border: 1px solid var(--border-color); background: #fff; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.3s; }
-        .btn-oauth-provider:hover { background: #000; color: #fff; border-color: #000; }
-    </style>
 </head>
 <body>
 
@@ -40,44 +18,36 @@
         </nav>
     </header>
 
-    <div class="login-container">
-        <div class="login-card">
-            <h2 style="font-family: 'Georgia', serif; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Đăng Nhập</h2>
-            <p style="text-align: center; font-size: 12px; color: #777; margin-bottom: 30px;">Chào mừng bạn đến với không gian phong cách 2026</p>
+    <div class="login-wrapper">
+        <div class="login-form-box">
+            <h2 style="font-family:'Georgia', serif; text-align:center; text-transform:uppercase; letter-spacing:1px; margin-bottom:5px;">Đăng Nhập</h2>
+            <p style="text-align:center; font-size:12px; color:var(--text-muted); margin-bottom:25px;">Không gian đặc quyền dành riêng cho giới mộ điệu</p>
             
             <form id="loginForm" onsubmit="validateLogin(event)">
-                <div class="form-group">
-                    <label for="email">Email tài khoản</label>
-                    <input type="email" id="email" placeholder="name@example.com" required autocomplete="username">
+                <div class="form-field">
+                    <label for="email">Tài khoản Email</label>
+                    <input type="email" id="email" placeholder="member@fashionhub.com" required autocomplete="username">
                 </div>
                 
-                <div class="form-group">
-                    <label for="password">Mật khẩu</label>
+                <div class="form-field">
+                    <label for="password">Mật khẩu bảo mật</label>
                     <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
-                    <div id="errorMsg" style="color: var(--accent-red); font-size: 12px; margin-top: 5px; display: none;"></div>
+                    <div id="errorMsg" style="color:var(--accent-red); font-size:12px; margin-top:5px; display:none;"></div>
                 </div>
 
-                <div class="login-util-flex">
-                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                        <input type="checkbox" style="width: auto; margin: 0;"> Ghi nhớ tôi
+                <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:20px; color:#555;">
+                    <label style="display:flex; align-items:center; gap:4px; cursor:pointer;">
+                        <input type="checkbox" style="width:auto;"> Duy trì đăng nhập
                     </label>
-                    <a href="#" onclick="alert('Hệ thống gửi mã khôi phục qua Email hiện đang bảo trì!')">Quên mật khẩu?</a>
+                    <a href="#" style="color:inherit; text-decoration:none;" onclick="alert('Tính năng đang được nâng cấp hệ thống!')">Quên mật khẩu?</a>
                 </div>
                 
-                <button type="submit" class="btn-submit-black">Vào hệ thống</button>
+                <button type="submit" class="btn-submit-black" style="padding:12px;">Xác nhận đăng nhập</button>
             </form>
-
-            <div class="oauth-divider">
-                <p>Hoặc kết nối nhanh bằng</p>
-                <div class="oauth-btns-group">
-                    <button class="btn-oauth-provider" onclick="alert('Đang kết nối API Google...')">Google</button>
-                    <button class="btn-oauth-provider" onclick="alert('Đang kết nối API Apple ID...')">Apple ID</button>
-                </div>
-            </div>
-
-            <div style="font-size: 12px; text-align: center; margin-top: 25px; color: #555;">
-                Bạn chưa có tài khoản? <a href="#" style="color:#000; font-weight:bold; text-decoration:none;" onclick="alert('Hệ thống đang tạm ngừng mở cổng đăng ký thành viên mới!')">Đăng ký ngay</a>
-            </div>
+            
+            <p style="font-size:11px; text-align:center; margin-top:20px; color:var(--text-muted); line-height:1.4;">
+                * Ghi chú: Đăng nhập thành công giúp kích hoạt trạng thái VIP toàn cục, cho phép mở khóa nội dung ẩn sâu tại chuyên trang <b>Xu Hướng</b>.
+            </p>
         </div>
     </div>
 
