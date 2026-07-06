@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Nhập Thành Viên - FASHION HUB</title>
+    <meta charset="UTF-8"><title>Đăng Nhập Thành Viên - FASHION HUB</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="logo">FASHION HUB</div>
         <nav>
             <a href="index.html">Trang Chủ</a>
             <a href="trends.html">Xu Hướng</a>
             <a href="events.html">Sự Kiện</a>
-            <a href="login.html" class="active">Thành Viên</a>
+            <span id="member-nav"><a href="login.html" class="active">Thành Viên</a></span>
         </nav>
     </header>
 
     <div class="login-container">
         <div class="login-card">
-            <h2>Đăng Nhập</h2>
+            <h2 style="font-family:'Georgia',serif; text-align:center; text-transform:uppercase;">Đăng Nhập</h2>
             <form id="loginForm" onsubmit="validateLogin(event)">
                 <div class="form-group">
-                    <label for="email">Email thành viên</label>
-                    <input type="email" id="email" placeholder="example@fashion.com">
+                    <label>Email tài khoản</label>
+                    <input type="email" id="email" placeholder="member@fashion.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Mật khẩu</label>
-                    <input type="password" id="password" placeholder="••••••••">
-                    <div class="error-msg" id="errorMsg">Vui lòng điền đầy đủ thông tin!</div>
+                    <label>Mật khẩu</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                    <div id="errorMsg" style="color:red; font-size:12px; margin-top:5px; display:none;"></div>
                 </div>
-                <button type="submit" class="btn-login">Vào hệ thống</button>
+                <button type="submit" class="btn-black">Đăng nhập hệ thống</button>
             </form>
+            <p style="font-size:11px; color:var(--text-muted); text-align:center; margin-top:20px;">* Đăng nhập để mở khóa các nội dung ẩn tại trang <b>Xu Hướng</b></p>
         </div>
     </div>
 
