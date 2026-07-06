@@ -21,32 +21,24 @@
     <div class="login-wrapper">
         <div class="login-form-box">
             <h2 style="font-family:'Georgia', serif; text-align:center; text-transform:uppercase; letter-spacing:1px; margin-bottom:5px;">Đăng Nhập</h2>
-            <p style="text-align:center; font-size:12px; color:var(--text-muted); margin-bottom:25px;">Không gian đặc quyền dành riêng cho giới mộ điệu</p>
+            <p style="text-align:center; font-size:12px; color:var(--text-muted); margin-bottom:25px;">Không gian dành riêng cho giới mộ điệu</p>
             
             <form id="loginForm" onsubmit="validateLogin(event)">
                 <div class="form-field">
                     <label for="email">Tài khoản Email</label>
-                    <input type="email" id="email" placeholder="member@fashionhub.com" required autocomplete="username">
+                    <input type="email" id="email" placeholder="yourname@example.com" required autocomplete="username">
                 </div>
                 
                 <div class="form-field">
-                    <label for="password">Mật khẩu bảo mật</label>
+                    <label for="password">Mật khẩu</label>
                     <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
                     <div id="errorMsg" style="color:var(--accent-red); font-size:12px; margin-top:5px; display:none;"></div>
                 </div>
-
-                <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:20px; color:#555;">
-                    <label style="display:flex; align-items:center; gap:4px; cursor:pointer;">
-                        <input type="checkbox" style="width:auto;"> Duy trì đăng nhập
-                    </label>
-                    <a href="#" style="color:inherit; text-decoration:none;" onclick="alert('Tính năng đang được nâng cấp hệ thống!')">Quên mật khẩu?</a>
-                </div>
                 
-                <button type="submit" class="btn-submit-black" style="padding:12px;">Xác nhận đăng nhập</button>
+                <button type="submit" class="btn-submit-black" style="width: 100%;">Xác nhận đăng nhập</button>
             </form>
-            
             <p style="font-size:11px; text-align:center; margin-top:20px; color:var(--text-muted); line-height:1.4;">
-                * Ghi chú: Đăng nhập thành công giúp kích hoạt trạng thái VIP toàn cục, cho phép mở khóa nội dung ẩn sâu tại chuyên trang <b>Xu Hướng</b>.
+                * Đăng nhập thành công sẽ mở khóa vùng nội dung ẩn VIP tại chuyên trang xu hướng.
             </p>
         </div>
     </div>
