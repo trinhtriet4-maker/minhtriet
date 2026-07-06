@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xu Hướng & Cảm Hứng Phong Cách | FASHION HUB</title>
+    <title>Xu Hướng & Làm Đẹp | FASHION HUB</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,11 +19,11 @@
     </header>
 
     <main class="container">
-        <h1 class="page-title">Xu Hướng & Làm Đẹp</h1>
+        <h1 class="page-title">Xu Hướng Thời Trang & Làm Đẹp</h1>
         
         <div class="filter-bar">
-            <button class="filter-btn active" onclick="filterCategory('all', this)">Tất cả</button>
-            <button class="filter-btn" onclick="filterCategory('runway', this)">Runway Quốc Tế</button>
+            <button class="filter-btn active" onclick="filterCategory('all', this)">Tất Cả</button>
+            <button class="filter-btn" onclick="filterCategory('runway', this)">Xu Hướng Runway</button>
             <button class="filter-btn" onclick="filterCategory('beauty', this)">Bí Quyết Làm Đẹp</button>
         </div>
 
@@ -31,38 +31,33 @@
             <div class="card-item trend-post" data-cat="runway">
                 <div class="card-media" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500');"></div>
                 <div class="card-content">
-                    <h3>Trường Phái Thiết Kế Tối Giản Đương Đại</h3>
-                    <p>Các phom dáng suông rộng và chất liệu thô mộc tự nhiên đang tái định hình trật tự thẩm mỹ mới.</p>
-                    <div style="display:flex; gap:10px; margin-top:auto;">
-                        <a href="detail.html" class="cross-link">Đọc bài viết</a>
-                        <a href="events.html" class="cross-link" style="background:#000; color:#fff;">Xem show diễn →</a>
-                    </div>
+                    <h3>Phom Dáng Tối Giản Lên Ngôi</h3>
+                    <p>Các thiết kế phom dáng suông rộng và bảng màu trung tính đang thống trị các sàn diễn lớn.</p>
+                    <a href="detail.html" class="cross-link">Xem chi tiết bài viết</a>
                 </div>
             </div>
 
             <div class="card-item trend-post" data-cat="beauty">
                 <div class="card-media" style="background-image: url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500');"></div>
                 <div class="card-content">
-                    <h3>Liệu Trình Nuôi Dưỡng Làn Da Thủy Tinh <span class="hot-badge">Hot</span></h3>
-                    <p>Chế độ chăm sóc da tối giản tập trung vào phục hồi, cấp ẩm sâu từ bên trong tế bào gốc.</p>
-                    <div style="margin-top:auto;">
-                        <a href="detail.html" class="cross-link">Xem quy trình</a>
-                    </div>
+                    <h3>Nuôi Dưỡng Làn Da Thủy Tinh <span class="hot-badge">Hot</span></h3>
+                    <p>Liệu trình cấp ẩm và phục hồi chuyên sâu từ tế bào gốc thực vật tự nhiên.</p>
+                    <a href="detail.html" class="cross-link">Xem quy trình thực hiện</a>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">Báo Cáo Xu Hướng Độc Quyền</h2>
+        <h2 class="section-title">Báo Cáo Dự Đoán Xu Hướng Độc Quyền</h2>
         
         <div id="vip-lock" class="lock-box">
             <h3>Nội Dung Giới Hạn Dành Cho Thành Viên VIP</h3>
-            <p>Hệ thống chứa phân tích số liệu dự đoán bảng màu cốt lõi mùa tới đang được khóa bảo mật.</p>
-            <a href="login.html" class="cross-link" style="background:#000; color:#fff; display:inline-block; margin-top:15px;">Đăng Nhập Để Mở Khóa</a>
+            <p>Vui lòng đăng nhập hệ thống để xem dữ liệu dự báo bảng màu cốt lõi của mùa tới.</p>
+            <a href="login.html" class="cross-link" style="background:#000; color:#fff; margin-top:15px;">Đăng Nhập Ngay</a>
         </div>
 
-        <div id="vip-content" class="vip-unlocked-card" style="display: none;">
-            <h3 style="color:var(--gold-vip); margin-bottom:10px;">✔ Báo Cáo Màu Sắc Đã Được Mở Khóa</h3>
-            <p style="font-size:14px; color:#333;">Dữ liệu chứng minh dải màu Đỏ Đô (Burgundy) sẽ phủ kín thị trường thời trang ứng dụng quý tới. Hãy ưu tiên lựa chọn các phụ kiện theo tone màu này để đón đầu xu hướng.</p>
+        <div id="vip-content" class="vip-card">
+            <h3 style="color:var(--gold-vip); margin-bottom:10px;">✔ Đã Mở Khóa Nội Dung VIP</h3>
+            <p>Báo cáo chỉ ra dải màu đỏ Bordeaux và phụ kiện kim loại khối hình học sẽ là tâm điểm dòng chảy thời trang ứng dụng trong quý tiếp theo.</p>
         </div>
     </main>
 
