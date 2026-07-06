@@ -1,3 +1,85 @@
+:root {
+    --bg-main: #F0F2F5;     /* Màu nền xám nhạt dịu đô thị */
+    --text-main: #0F172A;   /* Màu chữ than sẫm siêu rõ nét */
+    --accent-color: #FF4757;/* Đỏ san hô năng động làm điểm nhấn */
+    --card-bg: #FFFFFF;     /* Khung thẻ nền trắng tinh sạch sẽ */
+    --text-muted: #57606F;   /* Xám khói cho nội dung phụ */
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.8;
+}
+
+/* HEADER CÁ TÍNH PHẲNG */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 2px solid var(--text-main);
+    position: sticky; top: 0; z-index: 100;
+}
+
+.brand-logo {
+    font-size: 26px; font-weight: 700; letter-spacing: -1px;
+}
+.brand-logo span { color: var(--accent-color); }
+
+.menu-links { display: flex; list-style: none; }
+.menu-links li { margin-left: 30px; }
+.menu-links a {
+    color: var(--text-main); font-size: 15px; font-weight: 600; text-decoration: none;
+    transition: all 0.3s ease;
+}
+.menu-links a:hover, .menu-links a.active-link {
+    color: var(--accent-color);
+}
+
+/* BANNER PHONG CÁCH KHỐI ĐẬM (BLOCKY HERO) */
+.banner-hero {
+    height: 55vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), 
+                url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80') center/cover;
+    display: flex; align-items: center; padding: 0 40px;
+}
+
+.banner-box { max-width: 600px; color: #fff; }
+.tag-hot { background: var(--accent-color); padding: 4px 10px; font-size: 12px; font-weight: 700; border-radius: 4px; }
+.banner-box h1 { font-size: 48px; margin: 15px 0; font-weight: 700; }
+.banner-box p { font-size: 16px; opacity: 0.9; margin-bottom: 25px; }
+
+.action-btn {
+    display: inline-block; background: #fff; color: var(--text-main); padding: 12px 30px;
+    font-weight: 700; text-decoration: none; border-radius: 6px; transition: 0.3s;
+}
+.action-btn:hover { background: var(--accent-color); color: #fff; }
+
+/* LAYOUT THẺ BO GÓC CHIC (BO GÓC HIỆN ĐẠI) */
+.grid-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+.block-header h2 { font-size: 28px; font-weight: 700; margin-bottom: 30px; }
+
+.cards-layout {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px;
+}
+
+.modern-card {
+    background: var(--card-bg); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.img-zoom-holder { overflow: hidden; height: 320px; }
+.img-zoom-holder img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+.modern-card:hover .img-zoom-holder img { transform: scale(1.05); }
+
+.card-content { padding: 25px; }
 .category-lbl { color: var(--accent-color); font-size: 13px; font-weight: 700; text-transform: uppercase; }
 .card-content h3 { font-size: 22px; margin: 10px 0; }
 .card-content h3 a { color: var(--text-main); text-decoration: none; }
